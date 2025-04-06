@@ -1,0 +1,3218 @@
+"id";"username";"timestamp";"previous_problem_id";"problem_id";"code";"duration";"keystrokes";"attempts";"test_cases_passed";"total_test_cases";"difficulty";"topic"
+256;"cyan-fox";"2024-12-04 18:13:41";0;8;"from requests import get as g
+def shareBorder(country1:str, country2:str) -> bool:
+    """"""Return True if the two countries share a border, or False if not.""""""
+    url1 = f""https://restcountries.com/v3.1/name/{country1}?fullText=true""
+    url2 = f""https://restcountries.com/v3.1/name/{country2}?fullText=true""
+
+    response = g(url1)
+    data = response.json()[0] # dict
+
+    try:
+        borders = data['borders']
+    except:
+        return False
+    
+    response = g(url2)
+    data = response.json()[0]
+
+    try:
+        if data['cioc'] in borders:
+            return True
+    except:
+        return False
+    
+    return False";24.3014;3737;1;5;5;3;"APIs"
+257;"emerald-dolphin";"2024-12-04 18:44:17";0;11;"def atlCoffee(listOfShops):
+    listOfShops.sort()
+    if len(listOfShops) == 0:
+        return {}
+    shopsToVisit = atlCoffee(listOfShops[1:])
+    if listOfShops[0][2] > 5:
+        if listOfShops[0][1] not in shopsToVisit:
+            shopsToVisit[listOfShops[0][1]] = listOfShops[0][0]
+        else:
+            shopsToVisit[listOfShops[0][1]] += listOfShops[0][0]
+    return listOfShops";242.44;476;1;0;5;3;"Recursion"
+258;"charcoal-falcon";"2024-12-04 18:44:40";0;12;"def toCook(numClasses, diningDollars):
+    if numClasses > 3 and diningDollars > 10:
+        return ""Let's get Panda Express!""
+    elif numClasses <= 3 and diningDollars >= 50:
+        return ""Let's splurge on Chick-fil-A!""
+    else:
+        return ""Guess I'll have to cook myself.""";265.045;402;1;5;5;2;"Conditional"
+259;"emerald-dolphin";"2024-12-04 18:46:34";0;11;"def atlCoffee(listOfShops):
+    listOfShops.sort()
+    if len(listOfShops) == 0:
+        return {}
+    shopsToVisit = atlCoffee(listOfShops[1:])
+    if listOfShops[0][2] > 5:
+        if listOfShops[0][1] not in shopsToVisit:
+            shopsToVisit[listOfShops[0][1]] = listOfShops[0][0]
+        else:
+            shopsToVisit[listOfShops[0][1]] += listOfShops[0][0]
+    return listOfShops";379.846;476;2;0;5;3;"Recursion"
+260;"emerald-dolphin";"2024-12-04 18:46:50";0;11;"def atlCoffee(listOfShops):
+    listOfShops.sort()
+    if len(listOfShops) == 0:
+        return {}
+    shopsToVisit = atlCoffee(listOfShops[1:])
+    if listOfShops[0][2] > 5:
+        if listOfShops[0][1] not in shopsToVisit:
+            shopsToVisit[listOfShops[0][1]] = listOfShops[0][0]
+        else:
+            shopsToVisit[listOfShops[0][1]] += listOfShops[0][0]
+    return shopsToVisit";395.175;497;3;1;5;3;"Recursion"
+261;"emerald-dolphin";"2024-12-04 18:47:18";0;11;"def atlCoffee(listOfShops):
+    listOfShops.sort()
+    if len(listOfShops) == 0:
+        return {}
+    shopsToVisit = atlCoffee(listOfShops[1:])
+    if listOfShops[0][2] > 5:
+        if listOfShops[0][1] not in shopsToVisit:
+            shopsToVisit[listOfShops[0][1]] = [listOfShops[0][0]]
+        else:
+            shopsToVisit[listOfShops[0][1]] += [listOfShops[0][0]]
+    return shopsToVisit";423.295;501;4;1;5;3;"Recursion"
+262;"emerald-dolphin";"2024-12-04 18:48:26";0;11;"def atlCoffee(listOfShops):
+    if len(listOfShops) == 0:
+        return {}
+    shopsToVisit = atlCoffee(listOfShops[1:])
+    if listOfShops[0][2] > 5:
+        if listOfShops[0][1] not in shopsToVisit:
+            shopsToVisit[listOfShops[0][1]] = [listOfShops[0][0]]
+            shopsToVisit[listOfShops[0][1]].sort()
+        else:
+            shopsToVisit[listOfShops[0][1]] += [listOfShops[0][0]]
+            shopsToVisit[listOfShops[0][1]].sort()
+    return shopsToVisit";491.994;626;5;5;5;3;"Recursion"
+263;"charcoal-falcon";"2024-12-04 18:50:58";0;14;"def demystifyMessage(mess):
+    finalMess = """"
+    for index, char in enumerate(mess):
+        if index % 2 == 1:
+            continue
+        if char.ischar():
+            finalMess += char
+    return finalMess
+            ";341.523;292;1;1;5;3;"Iteration"
+264;"charcoal-falcon";"2024-12-04 18:55:27";0;14;"def demystifyMessage(mess):
+    finalMess = """"
+    for index, char in enumerate(mess):
+        if index % 2 == 1:
+            continue
+        if char.isalpha():
+            finalMess += char
+    return finalMess
+            ";610.7;303;2;5;5;3;"Iteration"
+265;"charcoal-falcon";"2024-12-04 19:00:17";14;15;"def captureTheFlag(directions):
+    for t in directions[::-1]:
+        if t == ""L"":
+            print(""Turn left!"")
+        elif t == ""R"":
+            print(""Turn right!"")
+        else:
+            return ""Poseidon is my dad?!""";267.332;351;1;0;5;1;"Iteration"
+266;"charcoal-falcon";"2024-12-04 19:00:31";14;15;"def captureTheFlag(directions):
+    for t in directions[::-1]:
+        if t == ""L"":
+            print(""Turn left!"")
+        elif t == ""R"":
+            print(""Turn right!"")
+        else:
+            return ""Poseidon is my dad?!""";281.429;351;2;0;5;1;"Iteration"
+267;"charcoal-falcon";"2024-12-04 19:00:44";14;15;"def captureTheFlag(directions):
+    for t in directions[::-1]:
+        if t == ""L"":
+            print(""Turn left!"")
+        elif t == ""R"":
+            print(""Turn right!"")
+        else:
+            return ""Poseidon is my dad?!""
+    return ""Made it back!""";294.707;398;3;0;5;2;"Iteration"
+268;"charcoal-falcon";"2024-12-04 19:01:35";14;15;"def captureTheFlag(directions):
+    directions = directions[::-1]
+    for t in directions:
+        if t == ""L"":
+            print(""Turn left!"")
+        elif t == ""R"":
+            print(""Turn right!"")
+        else:
+            return ""Poseidon is my dad?!""
+    return ""Made it back!""";345.419;478;4;0;5;2;"Iteration"
+269;"charcoal-falcon";"2024-12-04 19:28:03";15;16;"def gnomeAccounting(aStr, length):
+    for t in range(0, len(aStr), 6):
+        if aStr[t] == 1
+            if aStr[t+5] == 1:
+                return aStr[t:t+6]
+";583.384;238;1;0;5;3;"Iteration"
+270;"charcoal-falcon";"2024-12-04 19:28:12";15;16;"def gnomeAccounting(aStr, length):
+    for t in range(0, len(aStr), 6):
+        if aStr[t] == 1:
+            if aStr[t+5] == 1:
+                return aStr[t:t+6]
+";592.567;239;2;0;5;3;"Iteration"
+271;"charcoal-falcon";"2024-12-04 19:28:46";15;16;"def gnomeAccounting(aStr, length):
+    for t in range(0, len(aStr), 6):
+        if aStr[t] == 1:
+            if aStr[t+5] == 1:
+                return aStr[t:(t+6)]
+";626.744;241;3;0;5;3;"Iteration"
+272;"charcoal-falcon";"2024-12-04 19:29:08";15;16;"def gnomeAccounting(aStr, length):
+    for t in range(0, len(aStr), 6):
+        if aStr[t] == 1:
+            if aStr[t+5] == 1:
+                return aStr[t:(t+6)]
+    return ""Slow day today!""
+";648.379;314;4;1;5;3;"Iteration"
+273;"charcoal-falcon";"2024-12-04 19:31:48";15;16;"def gnomeAccounting(aStr, length):
+    for t in range(0, len(aStr), 6):
+        if aStr[t] == ""1"":
+            if aStr[t+5] == ""1"":
+                return aStr[t:(t+6)]
+    return ""Slow day today!""
+";808.779;318;5;1;5;3;"Iteration"
+274;"charcoal-falcon";"2024-12-04 19:32:21";15;16;"def gnomeAccounting(aStr, length):
+    for t in range(0, len(aStr), 5):
+        if aStr[t] == ""1"":
+            if aStr[t+5] == ""1"":
+                return aStr[t:(t+6)]
+    return ""Slow day today!""
+";841.802;318;6;1;5;3;"Iteration"
+275;"charcoal-falcon";"2024-12-04 19:36:40";15;16;"def gnomeAccounting(aStr, length):
+    for t in range(0, len(aStr), 6):
+        if aStr[t] == ""1"":
+            if aStr[t+5] == ""1"":
+                return aStr[t:(t+6)]
+    return ""Slow day today!""
+";1100.2;318;7;1;5;3;"Iteration"
+276;"charcoal-falcon";"2024-12-04 19:37:39";15;16;"def gnomeAccounting(aStr, length):
+    for t in range(0, len(aStr), length):
+        if aStr[t] == ""1"":
+            if aStr[t+(length-1)] == ""1"":
+                return aStr[t:(t+length)]
+    return ""Slow day today!""
+";1159.32;343;8;5;5;3;"Iteration"
+277;"black-polar bear";"2024-12-04 20:21:42";0;12;"def toCook(classes, dollars):
+    if classes > 3 and dollars > 10.0:
+        return ""Let's get Panda Express!""
+    elif classes <= 3 and dollars >= 50.0:
+        return ""Let's splurge on Chick-fil-A!""
+    else:
+        return ""Guess I'll have to cook myself.""
+print(toCook(4, 15.0))
+print(toCook(2, 5.0))
+print(toCook(3, 50.0))";295.226;367;1;5;5;2;"Conditional"
+278;"black-polar bear";"2024-12-04 20:27:46";12;13;"def cookingClass(date, weekend):
+    if date % 2 == 0:
+        if weekend == True:
+            return f""Let's go cooking on day {date}!""
+        else:
+            return ""Let's plan for some other day.""
+    else:
+        if weekend == True:
+            return f""Let's check if there is a cooking class on day {date}!""
+        else:
+            return f""Let's go cooking on day {date}!""
+        
+print(cookingClass(14, True))
+print(cookingClass(5, True))";328.198;553;1;5;5;2;"Conditional"
+279;"black-polar bear";"2024-12-04 20:35:31";0;15;"def captureThe Flag(directions):
+    backwards = directions[::-1]
+    for letter in backwards:
+        if letter == ""L"":
+            print(""Turn left!"")
+        elif letter == ""R"":
+            print(""Turn right!"")
+        elif letter == ""W"":
+            return ""Poseidon is my dad?!""
+        else:
+            return ""We made it back!""
+print(captureTheFlag('LLRL'))
+print(captureTheFlag('LLLLLLRWR'))";302.058;474;1;0;5;2;"Iteration"
+280;"black-polar bear";"2024-12-04 20:35:48";0;15;"def captureTheFlag(directions):
+    backwards = directions[::-1]
+    for letter in backwards:
+        if letter == ""L"":
+            print(""Turn left!"")
+        elif letter == ""R"":
+            print(""Turn right!"")
+        elif letter == ""W"":
+            return ""Poseidon is my dad?!""
+        else:
+            return ""We made it back!""
+print(captureTheFlag('LLRL'))
+print(captureTheFlag('LLLLLLRWR'))";319.604;475;2;0;5;2;"Iteration"
+281;"black-polar bear";"2024-12-04 20:37:44";0;15;"def captureTheFlag(directions):
+    backwards = directions[::-1]
+    directionList = []
+    for letter in backwards:
+        if letter == ""L"":
+            directionList.append(""Turn left!"")
+        elif letter == ""R"":
+            directionList.append(""Turn right!"")
+        elif letter == ""W"":
+            return ""Poseidon is my dad?!""
+        else:
+            return ""We made it back!""
+    return directionList
+print(captureTheFlag('LLRL'))
+print(captureTheFlag('LLLLLLRWR'))";435.119;591;3;0;5;2;"Iteration"
+282;"black-polar bear";"2024-12-04 20:46:12";0;15;"def captureTheFlag(directions):
+    backwards = directions[::-1]
+    directionList = []
+    for letter in backwards:
+        if letter == ""L"":
+            directionList.append(""Turn left!"")
+        elif letter == ""R"":
+            directionList.append(""Turn right!"")
+        elif letter == ""W"":
+            directionList.append(""Poseidon is my dad?!"")
+            return directionList
+    return ""Made it back!""
+            
+print(captureTheFlag('LLRL'))
+print(captureTheFlag('LLLLLLRWR'))";943.866;1542;4;3;5;2;"Iteration"
+283;"black-polar bear";"2024-12-04 20:47:37";0;15;"def captureTheFlag(directions):
+    backwards = directions[::-1]
+    directionList = []
+    for letter in backwards:
+        if letter == ""L"":
+            directionList.append(""Turn left!"")
+        elif letter == ""R"":
+            directionList.append(""Turn right!"")
+        elif letter == ""W"":
+            directionList.append(""Poseidon is my dad?!"")
+            return directionList
+    return directionList.append(""Made it back!"")
+            
+print(captureTheFlag('LLRL'))
+print(captureTheFlag('LLLLLLRWR'))";1028.86;1598;5;3;5;2;"Iteration"
+284;"lime-owl";"2024-12-04 20:50:35";11;22;"def foulCount(aList):
+    if not aList:
+        return []
+    else:
+        count += fouls
+        (team, fouls) = aList[0]
+        if fouls > 25:
+            aList = [count] + [f""{team} has too many fouls!""]+ countfoulCount(aList[1:])
+        elif fouls < 0:
+            aList = [count] + [f""{team} has an incorrect foul count""]+ countfoulCount(aList[1:])
+        else:
+            aList = [count]
+
+        return aList
+        
+        
+";329.85;769;1;0;5;4;"Recursion"
+285;"lime-owl";"2024-12-04 20:50:45";11;22;"def foulCount(aList):
+    if not aList:
+        return []
+    else:
+        count = 0
+        count += fouls
+        (team, fouls) = aList[0]
+        if fouls > 25:
+            aList = [count] + [f""{team} has too many fouls!""]+ countfoulCount(aList[1:])
+        elif fouls < 0:
+            aList = [count] + [f""{team} has an incorrect foul count""]+ countfoulCount(aList[1:])
+        else:
+            aList = [count]
+
+        return aList
+        
+        
+";339.698;787;2;0;5;4;"Recursion"
+286;"lime-owl";"2024-12-04 20:51:01";11;22;"def foulCount(aList):
+    if not aList:
+        return []
+    else:
+        count = 0
+        (team, fouls) = aList[0]
+        count += fouls
+        if fouls > 25:
+            aList = [count] + [f""{team} has too many fouls!""]+ countfoulCount(aList[1:])
+        elif fouls < 0:
+            aList = [count] + [f""{team} has an incorrect foul count""]+ countfoulCount(aList[1:])
+        else:
+            aList = [count]
+
+        return aList
+        
+        
+";355.674;853;3;0;5;4;"Recursion"
+287;"lime-owl";"2024-12-04 20:55:28";11;22;"def foulCount(aList):
+    if not aList:
+        return [[],0]
+    else:
+        count = 0
+        (team, fouls) = aList[0]
+        [alerts, totalFouls] = foulCount(aList[1:])
+        if fouls > 25:
+            alerts = [f""{team} has too many fouls!""] + alerts
+        elif fouls < 0:
+            alerts = [f""{team} has an incorrect foul count""]+ alerts
+    
+
+        return [alerts, totalFouls+fouls]
+        
+        
+";622.563;1111;4;2;5;4;"Recursion"
+288;"lime-owl";"2024-12-04 20:55:51";11;22;"def foulCount(aList):
+    if not aList:
+        return [[],0]
+    else:
+        count = 0
+        (team, fouls) = aList[0]
+        [alerts, totalFouls] = foulCount(aList[1:])
+        if fouls > 25:
+            alerts = [f""{team} has too many fouls!""] + alerts
+        elif fouls < 0:
+            alerts = [f""{team} has an incorrect foul count.""]+ alerts
+    
+
+        return [alerts, totalFouls+fouls]
+        
+        
+";645.307;1112;5;5;5;4;"Recursion"
+289;"magenta-antelope";"2024-12-04 20:56:35";22;10;"def numCoffees(num):
+    print(""Coffees left:num"")
+    if num == 0:
+        print(""No more coffee!"")
+        return 0
+        
+    else:
+        num = num-1
+";109.199;245;1;0;5;3;"Recursion"
+290;"magenta-antelope";"2024-12-04 20:57:18";22;10;"def numCoffees(num):
+    print(f""Coffees left:{num}"")
+    if num == 0:
+        print(""No more coffee!"")
+        return 0
+        
+    else:
+        numCoffees(num-1)
+";151.703;260;2;0;5;3;"Recursion"
+291;"black-polar bear";"2024-12-04 20:57:22";16;14;"def demystifyMessage(jumbledMessage):
+    unscrambledMessage = ''
+    for index, letter in jumbledMessage:
+        if letter.isalpha():
+            if index % 2 == 0:
+                unscrambledMessage += letter
+    return unscrambledMessage
+    
+print(demystifyMessage(""P1E3R5C7Y9""))
+print(demystifyMessage(""*DD%PE^M7;I&GGOKD""))
+            ";206.068;404;1;0;5;2;"Iteration"
+292;"black-polar bear";"2024-12-04 20:57:42";16;14;"def demystifyMessage(jumbledMessage):
+    unscrambledMessage = ''
+    for index, letter in jumbledMessage.enumerate():
+        if letter.isalpha():
+            if index % 2 == 0:
+                unscrambledMessage += letter
+    return unscrambledMessage
+    
+print(demystifyMessage(""P1E3R5C7Y9""))
+print(demystifyMessage(""*DD%PE^M7;I&GGOKD""))
+            ";226.367;416;2;0;5;2;"Iteration"
+293;"black-polar bear";"2024-12-04 20:59:55";16;14;"def demystifyMessage(jumbledMessage):
+    unscrambledMessage = ''
+    for index in len(range(jumbledMessage)):
+        if index % 2 == 0:
+            if jumbledMessage[index].isalpha():
+                unscrambledMessage += jumbledMessage[index]
+    return unscrambledMessage
+    
+    
+    
+    
+    
+print(demystifyMessage(""P1E3R5C7Y9""))
+print(demystifyMessage(""*DD%PE^M7;I&GGOKD""))
+            ";359.023;878;3;0;5;2;"Iteration"
+294;"black-polar bear";"2024-12-04 21:00:24";16;14;"def demystifyMessage(jumbledMessage):
+    unscrambledMessage = ''
+    for index in range(len(jumbledMessage)):
+        if index % 2 == 0:
+            if jumbledMessage[index].isalpha():
+                unscrambledMessage += jumbledMessage[index]
+    return unscrambledMessage
+    
+    
+    
+    
+    
+print(demystifyMessage(""P1E3R5C7Y9""))
+print(demystifyMessage(""*DD%PE^M7;I&GGOKD""))
+            ";388.345;882;4;5;5;2;"Iteration"
+295;"lime-owl";"2024-12-04 21:03:13";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = list_budget[index]
+        newList.append(team, price)
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= budget:
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+                    
+    return aDict
+        ";394.995;846;1;1;5;3;"Dictionaries"
+296;"lime-owl";"2024-12-04 21:03:28";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = list_budget[index]
+        newList.append(team, price)
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= budget:
+                if teams in aDict:
+                    aDict[teams] += driver
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+                    
+    return aDict
+        ";409.459;859;2;1;5;3;"Dictionaries"
+297;"lime-owl";"2024-12-04 21:03:47";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = list_budget[index]
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= budget:
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+                    
+    return aDict
+        ";428.87;876;3;2;5;3;"Dictionaries"
+298;"lime-owl";"2024-12-04 21:04:54";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = list_budget[index]
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= budget:
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+            else:
+                aDict[teams] = []
+    return aDict
+        ";496.152;1013;4;2;5;3;"Dictionaries"
+299;"black-polar bear";"2024-12-04 21:05:09";0;18;"def decryptValentine(encryptedMessage, key):
+    decryptedMessage = ''
+    for index in range(len(encryptedMessage)):
+        if index % key == 0:
+            encryptedMessage[index] += decryptedMessage
+    decryptedMessage = decryptedMessage[::-1
+    return decryptedMessage
+    
+print(decryptValentine(""u1o3y4 3e5v0o2L"", 2))
+print(decryptValentine(""!o2t67r12a!!ejkH"", 3))";222.485;421;1;0;5;2;"Strings"
+300;"lime-owl";"2024-12-04 21:05:13";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = list_budget[index]
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= budget:
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+            else:
+                aDict[teams] += []
+    return aDict
+        ";515.069;1014;5;1;5;3;"Dictionaries"
+301;"black-polar bear";"2024-12-04 21:05:16";0;18;"def decryptValentine(encryptedMessage, key):
+    decryptedMessage = ''
+    for index in range(len(encryptedMessage)):
+        if index % key == 0:
+            encryptedMessage[index] += decryptedMessage
+    decryptedMessage = decryptedMessage[::-1]
+    return decryptedMessage
+    
+print(decryptValentine(""u1o3y4 3e5v0o2L"", 2))
+print(decryptValentine(""!o2t67r12a!!ejkH"", 3))";230.201;422;2;0;5;2;"Strings"
+302;"black-polar bear";"2024-12-04 21:05:42";0;18;"def decryptValentine(encryptedMessage, key):
+    decryptedMessage = ''
+    for index in range(len(encryptedMessage)):
+        if index % key == 0:
+            encryptedMessage[index] += decryptedMessage
+    decryptedMessage[::-1]
+    return decryptedMessage
+    
+print(decryptValentine(""u1o3y4 3e5v0o2L"", 2))
+print(decryptValentine(""!o2t67r12a!!ejkH"", 3))";256.293;441;3;0;5;2;"Strings"
+303;"lime-owl";"2024-12-04 21:05:45";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = list_budget[index]
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= budget:
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+            else:
+                if teams in aDict:
+                    aDict[teams].append([])
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = []
+    return aDict
+        ";546.911;1252;6;1;5;3;"Dictionaries"
+304;"lime-owl";"2024-12-04 21:06:23";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, int(budget) in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= budget:
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+            else:
+                if teams in aDict:
+                    aDict[teams].append([])
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = []
+    return aDict
+        ";584.686;1264;7;0;5;3;"Dictionaries"
+305;"black-polar bear";"2024-12-04 21:06:28";0;18;"def decryptValentine(encryptedMessage, key):
+    decryptedMessage = ''
+    for index in range(len(encryptedMessage)):
+        if index % key == 0:
+            decryptedMessage += encryptedMessage[index]
+    decryptedMessage[::-1]
+    return decryptedMessage
+    
+print(decryptValentine(""u1o3y4 3e5v0o2L"", 2))
+print(decryptValentine(""!o2t67r12a!!ejkH"", 3))";302.425;497;4;1;5;2;"Strings"
+306;"lime-owl";"2024-12-04 21:06:35";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, int(budget) in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= budget:
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+    return aDict
+        ";597.102;1461;8;0;5;3;"Dictionaries"
+307;"magenta-antelope";"2024-12-04 21:06:46";22;10;"def numCoffees(num):
+    print(f""Coffees left:{num}"")
+    if num == 0:
+        print(""No more coffee!"")
+    else:
+        numCoffees(num-1)
+";720.407;286;3;0;5;3;"Recursion"
+308;"black-polar bear";"2024-12-04 21:06:47";0;18;"def decryptValentine(encryptedMessage, key):
+    decryptedMessage = ''
+    for index in range(len(encryptedMessage)):
+        if index % key == 0:
+            decryptedMessage += encryptedMessage[index]
+    decryptedMessage = decryptedMessage[::-1]
+    return decryptedMessage
+    
+print(decryptValentine(""u1o3y4 3e5v0o2L"", 2))
+print(decryptValentine(""!o2t67r12a!!ejkH"", 3))";321.369;516;5;5;5;2;"Strings"
+309;"lime-owl";"2024-12-04 21:06:53";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= int(budget):
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+    return aDict
+        ";615.197;1471;9;2;5;3;"Dictionaries"
+310;"lime-owl";"2024-12-04 21:07:34";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= int(budget):
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+            else:
+                aDict[teams] = []
+    return aDict
+        ";655.292;1539;10;2;5;3;"Dictionaries"
+311;"lime-owl";"2024-12-04 21:07:44";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= int(budget):
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+            else:
+                aDict[teams] += []
+    return aDict
+        ";665.634;1544;11;1;5;3;"Dictionaries"
+312;"lime-owl";"2024-12-04 21:07:48";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= int(budget):
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+            else:
+                aDict[teams] = []
+    return aDict
+        ";669.454;1545;12;2;5;3;"Dictionaries"
+313;"lime-owl";"2024-12-04 21:08:09";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= int(budget):
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+                    aDict[teams].sort()
+            else:
+                aDict[teams] = []
+    return aDict
+        ";690.695;1593;13;2;5;3;"Dictionaries"
+314;"lime-owl";"2024-12-04 21:08:30";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= int(budget):
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+                    aDict[teams].sort()
+            else:
+                if teams in aDict:
+                    aDict[teams].append([])
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = []
+                    aDict[teams].sort()
+    return aDict
+        ";711.402;1798;14;1;5;3;"Dictionaries"
+315;"lime-owl";"2024-12-04 21:08:47";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= int(budget):
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+                    aDict[teams].sort()
+            else:
+                if teams in aDict:
+                    aDict[teams].append()
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = []
+                    aDict[teams].sort()
+    return aDict
+        ";728.348;1800;15;1;5;3;"Dictionaries"
+316;"lime-owl";"2024-12-04 21:08:53";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= int(budget):
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+                    aDict[teams].sort()
+            else:
+                if teams in aDict:
+                    aDict[teams].append("""")
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = []
+                    aDict[teams].sort()
+    return aDict
+        ";734.37;1802;16;1;5;3;"Dictionaries"
+317;"lime-owl";"2024-12-04 21:09:10";5;21;"def findDrivers (list_drivers, list_teams, list_budget):
+    aDict = {}
+    newList = []
+    for index,team in enumerate(list_teams):
+        price = int(list_budget[index])
+        newList.append((team, price))
+    
+    for teams, budget in newList:
+        for driver, paycheck in list_drivers:
+            if paycheck <= int(budget):
+                if teams in aDict:
+                    aDict[teams].append(driver)
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = [driver]
+                    aDict[teams].sort()
+            else:
+                if teams in aDict:
+                    aDict[teams] += []
+                    aDict[teams].sort()
+                else:
+                    aDict[teams] = []
+                    aDict[teams].sort()
+    return aDict
+        ";751.507;1815;17;5;5;3;"Dictionaries"
+318;"black-polar bear";"2024-12-04 21:14:42";18;17;"def countCase(loveLetter):
+    upper = 0
+    lower = 0
+    for letter in loveLetter:
+        if letter.isupper():
+            upper += 1
+        elif letter.islower():
+            lower += 1
+        else:
+            continue
+    difference = abs(upper - lower)
+    if upper > lower:
+        return f""Darling, I need {difference} more lowercase character(s) in our love story.""
+    if lower > upper:
+        return f""Sweetheart, I need {difference} more uppercase character(s) in our love tale.""
+    else:
+        return ""Our love story is perfectly balanced, just like us.""
+
+print(countCase(""You are my MOON!""))
+print(countCase(""U + m3 = <3""))";316.072;734;1;5;5;2;"Strings"
+319;"black-polar bear";"2024-12-04 21:22:01";0;1;"def eatingOut(yourList, friendList):
+    favorites = []
+    for place in yourList:
+        for placefriend in friendList:
+            if placefriend == place:
+                if placefriend not in favorites:
+                    favorites. append[placefriend]
+    if favorites == []:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        return sorted(favorites)
+        
+print(eatingOut(yourList, friendList))
+print(eatingOut(yourList, friendList))
+                ";287.218;608;1;0;5;3;"Lists"
+320;"black-polar bear";"2024-12-04 21:22:44";0;1;"def eatingOut(yourList, friendList):
+    favorites = []
+    for place in yourList:
+        for placefriend in friendList:
+            if placefriend == place:
+                if placefriend not in favorites:
+                    favorites. append[placefriend]
+    if favorites == []:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        return sorted(favorites)
+ 
+ 
+yourList = ['Gyro Bros', 'Subway', 'Ponko Chicken', 'Tin Drum'], friendList = ['McDonalds', ""Umma's"", 'Subway', 'Gyro Bros']       
+print(eatingOut(yourList, friendList))
+
+yourList = ['Blue Donkey', ""Kaldi's"", 'Panda Express', 'Halal Guys'], friendList = ['5th Street Deli', 'Brain Freeze', 'Panda Express']
+print(eatingOut(yourList, friendList))
+                ";330.928;874;2;0;5;3;"Lists"
+321;"black-polar bear";"2024-12-04 21:23:34";0;1;"def eatingOut(yourList, friendList):
+    favorites = []
+    for place in yourList:
+        for placefriend in friendList:
+            if placefriend == place:
+                if placefriend not in favorites:
+                    favorites. append[placefriend]
+    if favorites == []:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        return sorted(favorites)
+ 
+ 
+yourList = ['Gyro Bros', 'Subway', 'Ponko Chicken', 'Tin Drum'] 
+friendList = ['McDonalds', ""Umma's"", 'Subway', 'Gyro Bros']       
+print(eatingOut(yourList, friendList))
+
+yourList = ['Blue Donkey', ""Kaldi's"", 'Panda Express', 'Halal Guys']
+friendList = ['5th Street Deli', 'Brain Freeze', 'Panda Express']
+print(eatingOut(yourList, friendList))
+                ";380.861;883;3;0;5;3;"Lists"
+322;"black-polar bear";"2024-12-04 21:24:24";0;1;"def eatingOut(yourList, friendList):
+    favorites = []
+    for place in yourList:
+        for placefriend in friendList:
+            if placefriend == place:
+                if placefriend not in favorites:
+                    favorites. append[placefriend]
+    if favorites == []:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        return sorted(favorites)
+ 
+ 
+yourList = ['Gyro Bros', 'Subway', 'Ponko Chicken', 'Tin Drum'] 
+friendList = ['McDonalds', ""Umma's"", 'Subway', 'Gyro Bros']       
+print(eatingOut(yourList, friendList))
+
+yourList = ['Blue Donkey', ""Kaldi's"", 'Panda Express', 'Halal Guys']
+friendList = ['5th Street Deli', 'Brain Freeze', 'Panda Express']
+print(eatingOut(yourList, friendList))
+                ";430.923;883;4;0;5;3;"Lists"
+323;"black-polar bear";"2024-12-04 21:24:37";0;1;"def eatingOut(yourList, friendList):
+    favorites = []
+    for place in yourList:
+        for placefriend in friendList:
+            if placefriend == place:
+                if placefriend not in favorites:
+                    favorites.append[placefriend]
+    if favorites == []:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        return sorted(favorites)
+ 
+ 
+yourList = ['Gyro Bros', 'Subway', 'Ponko Chicken', 'Tin Drum'] 
+friendList = ['McDonalds', ""Umma's"", 'Subway', 'Gyro Bros']       
+print(eatingOut(yourList, friendList))
+
+yourList = ['Blue Donkey', ""Kaldi's"", 'Panda Express', 'Halal Guys']
+friendList = ['5th Street Deli', 'Brain Freeze', 'Panda Express']
+print(eatingOut(yourList, friendList))
+                ";443.649;884;5;0;5;3;"Lists"
+324;"black-polar bear";"2024-12-04 21:35:48";0;1;"def eatingOut(yourList, friendList):
+    favorites = []
+    for place in yourList:
+        for place2 in friendList:
+            if place2 == place:
+                favorites.append([place2])
+    return favorites
+                
+
+";1114.12;1389;6;0;5;3;"Lists"
+325;"black-polar bear";"2024-12-04 21:36:11";0;1;"def eatingOut(yourList, friendList):
+    favorites = []
+    for place in yourList:
+        for place2 in friendList:
+            if place2 == place:
+                favorites.append([place2])
+    return favorites
+                
+
+ 
+yourList = ['Gyro Bros', 'Subway', 'Ponko Chicken', 'Tin Drum'] 
+friendList = ['McDonalds', ""Umma's"", 'Subway', 'Gyro Bros']       
+print(eatingOut(yourList, friendList))
+
+yourList = ['Blue Donkey', ""Kaldi's"", 'Panda Express', 'Halal Guys']
+friendList = ['5th Street Deli', 'Brain Freeze', 'Panda Express']
+print(eatingOut(yourList, friendList))
+                
+
+";1137.15;1755;7;0;5;3;"Lists"
+326;"black-polar bear";"2024-12-04 21:36:31";0;1;"def eatingOut(yourList, friendList):
+    favorites = []
+    for place in yourList:
+        for place2 in friendList:
+            if place2 == place:
+                favorites.append(place2)
+    return favorites
+                
+
+ 
+yourList = ['Gyro Bros', 'Subway', 'Ponko Chicken', 'Tin Drum'] 
+friendList = ['McDonalds', ""Umma's"", 'Subway', 'Gyro Bros']       
+print(eatingOut(yourList, friendList))
+
+yourList = ['Blue Donkey', ""Kaldi's"", 'Panda Express', 'Halal Guys']
+friendList = ['5th Street Deli', 'Brain Freeze', 'Panda Express']
+print(eatingOut(yourList, friendList))
+                
+
+";1157.35;1757;8;2;5;3;"Lists"
+327;"black-polar bear";"2024-12-04 21:36:58";0;1;"def eatingOut(yourList, friendList):
+    favorites = []
+    for place in yourList:
+        for place2 in friendList:
+            if place2 == place:
+                favorites.append(place2)
+    return sorted(favorites)
+                
+
+ 
+yourList = ['Gyro Bros', 'Subway', 'Ponko Chicken', 'Tin Drum'] 
+friendList = ['McDonalds', ""Umma's"", 'Subway', 'Gyro Bros']       
+print(eatingOut(yourList, friendList))
+
+yourList = ['Blue Donkey', ""Kaldi's"", 'Panda Express', 'Halal Guys']
+friendList = ['5th Street Deli', 'Brain Freeze', 'Panda Express']
+print(eatingOut(yourList, friendList))
+                
+
+";1184.4;1775;9;3;5;3;"Lists"
+328;"black-polar bear";"2024-12-04 21:44:21";1;19;"def findLove(candidates, favCity, favColors):
+    matches = []
+    for candidate in candidate:
+        if candidate[1] == favCity:
+            if candidate[2] in favColors:
+                matches.append(candidate[0])
+    return sorted(matches)
+    
+candidates = [[""Joey"", ""NYC"", ""blue""], [""Chandler"", ""NYC"", ""green""]]
+
+favCity = ""NYC""
+
+favColors = [""green"", ""pink"", ""blue""]
+
+print(findLove(candidates, favCity, favColors))
+
+candidates = [[""Eric"", ""Denver"", ""red""], [""Kyle"", ""Denver"", ""yellow""], [""Stan"", ""Atlanta"", ""blue""]]
+
+favCity = ""Atlanta""
+
+favColors = [""yellow"", ""orange"", ""red""]
+
+print(findLove(candidates, favCity, favColors))
+
+
+                ";276.113;752;1;0;5;2;"Lists"
+329;"black-polar bear";"2024-12-04 21:44:41";1;19;"def findLove(candidates, favCity, favColors):
+    matches = []
+    for candidate in candidates:
+        if candidate[1] == favCity:
+            if candidate[2] in favColors:
+                matches.append(candidate[0])
+    return sorted(matches)
+    
+candidates = [[""Joey"", ""NYC"", ""blue""], [""Chandler"", ""NYC"", ""green""]]
+
+favCity = ""NYC""
+
+favColors = [""green"", ""pink"", ""blue""]
+
+print(findLove(candidates, favCity, favColors))
+
+candidates = [[""Eric"", ""Denver"", ""red""], [""Kyle"", ""Denver"", ""yellow""], [""Stan"", ""Atlanta"", ""blue""]]
+
+favCity = ""Atlanta""
+
+favColors = [""yellow"", ""orange"", ""red""]
+
+print(findLove(candidates, favCity, favColors))
+
+
+                ";296.302;753;2;5;5;2;"Lists"
+330;"black-polar bear";"2024-12-04 21:54:42";0;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for times, name in unorganizedTimeList.items():
+        slowestTime = 0
+        for time in times:
+            if time > slowestTime:
+                slowestTime = time
+        organizedTimeList.append(name, times.remove(slowestTime))
+    
+    return sorted(organizedTimeList)
+    
+unorganizedTimeList = [([7.05, 8.0, 6.2], ""Andre""), ([6.14, 9.2, 7.2], ""Collin""), ([7.42, 30.2, 6.34], ""Ethan""), ([9.2, 8.1, 6.23], ""Evan"")]
+
+print(organizeTimes(unorganizedTimeList))
+
+unorganizedTimeList = [([27.52, 28.54, 16.22], ""Naomi""),([36.49, 48.32, 21.47], ""Chris"")]
+
+print(organizeTimes(unorganizedTimeList))
+    ";487.442;937;1;0;5;3;"Tuples"
+331;"black-polar bear";"2024-12-04 21:54:42";0;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for times, name in unorganizedTimeList.items():
+        slowestTime = 0
+        for time in times:
+            if time > slowestTime:
+                slowestTime = time
+        organizedTimeList.append(name, times.remove(slowestTime))
+    
+    return sorted(organizedTimeList)
+    
+unorganizedTimeList = [([7.05, 8.0, 6.2], ""Andre""), ([6.14, 9.2, 7.2], ""Collin""), ([7.42, 30.2, 6.34], ""Ethan""), ([9.2, 8.1, 6.23], ""Evan"")]
+
+print(organizeTimes(unorganizedTimeList))
+
+unorganizedTimeList = [([27.52, 28.54, 16.22], ""Naomi""),([36.49, 48.32, 21.47], ""Chris"")]
+
+print(organizeTimes(unorganizedTimeList))
+    ";487.442;937;1;0;5;3;"Modules"
+332;"black-polar bear";"2024-12-04 21:54:56";0;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for times, name in unorganizedTimeList:
+        slowestTime = 0
+        for time in times:
+            if time > slowestTime:
+                slowestTime = time
+        organizedTimeList.append(name, times.remove(slowestTime))
+    
+    return sorted(organizedTimeList)
+    
+unorganizedTimeList = [([7.05, 8.0, 6.2], ""Andre""), ([6.14, 9.2, 7.2], ""Collin""), ([7.42, 30.2, 6.34], ""Ethan""), ([9.2, 8.1, 6.23], ""Evan"")]
+
+print(organizeTimes(unorganizedTimeList))
+
+unorganizedTimeList = [([27.52, 28.54, 16.22], ""Naomi""),([36.49, 48.32, 21.47], ""Chris"")]
+
+print(organizeTimes(unorganizedTimeList))
+    ";502.028;945;2;0;5;3;"Tuples"
+333;"black-polar bear";"2024-12-04 21:54:56";0;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for times, name in unorganizedTimeList:
+        slowestTime = 0
+        for time in times:
+            if time > slowestTime:
+                slowestTime = time
+        organizedTimeList.append(name, times.remove(slowestTime))
+    
+    return sorted(organizedTimeList)
+    
+unorganizedTimeList = [([7.05, 8.0, 6.2], ""Andre""), ([6.14, 9.2, 7.2], ""Collin""), ([7.42, 30.2, 6.34], ""Ethan""), ([9.2, 8.1, 6.23], ""Evan"")]
+
+print(organizeTimes(unorganizedTimeList))
+
+unorganizedTimeList = [([27.52, 28.54, 16.22], ""Naomi""),([36.49, 48.32, 21.47], ""Chris"")]
+
+print(organizeTimes(unorganizedTimeList))
+    ";502.028;945;2;0;5;3;"Modules"
+334;"black-polar bear";"2024-12-04 21:55:45";0;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for times, name in unorganizedTimeList:
+        slowestTime = 0
+        for time in times:
+            if time > slowestTime:
+                slowestTime = time
+        organizedTimeList.append(name)
+        
+    
+    return sorted(organizedTimeList)
+    
+unorganizedTimeList = [([7.05, 8.0, 6.2], ""Andre""), ([6.14, 9.2, 7.2], ""Collin""), ([7.42, 30.2, 6.34], ""Ethan""), ([9.2, 8.1, 6.23], ""Evan"")]
+
+print(organizeTimes(unorganizedTimeList))
+
+unorganizedTimeList = [([27.52, 28.54, 16.22], ""Naomi""),([36.49, 48.32, 21.47], ""Chris"")]
+
+print(organizeTimes(unorganizedTimeList))
+    ";550.397;1029;3;0;5;3;"Tuples"
+335;"black-polar bear";"2024-12-04 21:55:45";0;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for times, name in unorganizedTimeList:
+        slowestTime = 0
+        for time in times:
+            if time > slowestTime:
+                slowestTime = time
+        organizedTimeList.append(name)
+        
+    
+    return sorted(organizedTimeList)
+    
+unorganizedTimeList = [([7.05, 8.0, 6.2], ""Andre""), ([6.14, 9.2, 7.2], ""Collin""), ([7.42, 30.2, 6.34], ""Ethan""), ([9.2, 8.1, 6.23], ""Evan"")]
+
+print(organizeTimes(unorganizedTimeList))
+
+unorganizedTimeList = [([27.52, 28.54, 16.22], ""Naomi""),([36.49, 48.32, 21.47], ""Chris"")]
+
+print(organizeTimes(unorganizedTimeList))
+    ";550.397;1029;3;0;5;3;"Modules"
+336;"black-polar bear";"2024-12-04 21:56:42";0;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for times, name in unorganizedTimeList:
+        slowestTime = 0
+        for time in times:
+            if time > slowestTime:
+                slowestTime = time
+        organizedTimeList.append((name, times.remove(slowestTime)))
+        
+    
+    return sorted(organizedTimeList)
+    
+unorganizedTimeList = [([7.05, 8.0, 6.2], ""Andre""), ([6.14, 9.2, 7.2], ""Collin""), ([7.42, 30.2, 6.34], ""Ethan""), ([9.2, 8.1, 6.23], ""Evan"")]
+
+print(organizeTimes(unorganizedTimeList))
+
+unorganizedTimeList = [([27.52, 28.54, 16.22], ""Naomi""),([36.49, 48.32, 21.47], ""Chris"")]
+
+print(organizeTimes(unorganizedTimeList))
+    ";608.338;1064;4;0;5;3;"Tuples"
+337;"black-polar bear";"2024-12-04 21:56:42";0;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for times, name in unorganizedTimeList:
+        slowestTime = 0
+        for time in times:
+            if time > slowestTime:
+                slowestTime = time
+        organizedTimeList.append((name, times.remove(slowestTime)))
+        
+    
+    return sorted(organizedTimeList)
+    
+unorganizedTimeList = [([7.05, 8.0, 6.2], ""Andre""), ([6.14, 9.2, 7.2], ""Collin""), ([7.42, 30.2, 6.34], ""Ethan""), ([9.2, 8.1, 6.23], ""Evan"")]
+
+print(organizeTimes(unorganizedTimeList))
+
+unorganizedTimeList = [([27.52, 28.54, 16.22], ""Naomi""),([36.49, 48.32, 21.47], ""Chris"")]
+
+print(organizeTimes(unorganizedTimeList))
+    ";608.338;1064;4;0;5;3;"Modules"
+338;"emerald-jaguar";"2024-12-04 22:56:07";0;22;"def foulCount(fouls):
+    if not fouls:
+        return []
+    else:
+        (team, foulNum) = fouls[0]
+        if foulNum > 25:
+            return f""{team} has too many fouls!""
+        elif foulNum < 0:
+            return f""{team} has an incorrect foul count""
+        return foulNum + foulCount(fouls[1:])
+        ";199.067;396;1;0;5;3;"Recursion"
+339;"emerald-jaguar";"2024-12-04 22:57:59";0;22;"def foulCount(fouls):
+    if not fouls:
+        return []
+    else:
+        (team, foulNum) = fouls[0]
+        aList = [[], 0]
+        if foulNum > 25:
+            aList[0].append(f""{team} has too many fouls!"")
+        elif foulNum < 0:
+            aList[0].append(f""{team} has an incorrect foul count"")
+        return foulNum + foulCount(fouls[1:])
+        ";311.711;484;2;0;5;3;"Recursion"
+340;"lime-shark";"2024-12-05 00:08:14";3;20;"def numInventions(inventions): 
+    count = 0
+    for item in inventions:
+        for invention, boolean in item:
+            if boolean == True:
+                count += 1
+    if count == 0:
+        return ""We still have 104 days to invent something!""
+print(numInventions(inventions))
+print(numInventions(inventions))
+    ";221.719;403;1;0;5;2;"Tuples"
+341;"lime-shark";"2024-12-05 00:08:46";3;20;"def numInventions(inventions): 
+    count = 0
+    for item in inventions:
+        for invention, boolean in item:
+            if boolean == True:
+                count += 1
+    if count == 0:
+        return ""We still have 104 days to invent something!""
+        
+        
+inventions = [[""Time Machine"", True], [""Anti-Gravity Ray"", False], [""Giant Rollercoaster"", True], [""Shrinkinator"", False]]
+print(numInventions(inventions))
+
+inventions = [[""Super Robot"", True], [""Invisible Cloak"", True], [""Teleportation Device"", True], [""Mind-Reading Helmet"", True], [""Laser Beam Glasses"", True]]
+print(numInventions(inventions))
+    ";253.606;718;2;0;5;2;"Tuples"
+342;"lime-shark";"2024-12-05 00:09:03";3;20;"def numInventions(inventions): 
+    count = 0
+    for item in inventions:
+        for invention, boolean in item.items():
+            if boolean == True:
+                count += 1
+    if count == 0:
+        return ""We still have 104 days to invent something!""
+        
+        
+inventions = [[""Time Machine"", True], [""Anti-Gravity Ray"", False], [""Giant Rollercoaster"", True], [""Shrinkinator"", False]]
+print(numInventions(inventions))
+
+inventions = [[""Super Robot"", True], [""Invisible Cloak"", True], [""Teleportation Device"", True], [""Mind-Reading Helmet"", True], [""Laser Beam Glasses"", True]]
+print(numInventions(inventions))
+    ";270.224;726;3;0;5;2;"Tuples"
+343;"lime-shark";"2024-12-05 00:09:57";3;20;"def numInventions(inventions): 
+    count = 0
+    for invention, boolean in inventions:
+        if boolean == True:
+            count += 1
+    if count == 0:
+        return ""We still have 104 days to invent something!""
+        
+        
+inventions = [[""Time Machine"", True], [""Anti-Gravity Ray"", False], [""Giant Rollercoaster"", True], [""Shrinkinator"", False]]
+print(numInventions(inventions))
+
+inventions = [[""Super Robot"", True], [""Invisible Cloak"", True], [""Teleportation Device"", True], [""Mind-Reading Helmet"", True], [""Laser Beam Glasses"", True]]
+print(numInventions(inventions))
+    ";324.906;800;4;2;5;2;"Tuples"
+344;"lime-shark";"2024-12-05 00:10:42";3;20;"def numInventions(inventions): 
+    count = 0
+    for invention, boolean in inventions:
+        if boolean == True:
+            count += 1
+    if count == 0:
+        return ""We still have 104 days to invent something!""
+    else: 
+        return count
+        
+        
+inventions = [[""Time Machine"", True], [""Anti-Gravity Ray"", False], [""Giant Rollercoaster"", True], [""Shrinkinator"", False]]
+print(numInventions(inventions))
+
+inventions = [[""Super Robot"", True], [""Invisible Cloak"", True], [""Teleportation Device"", True], [""Mind-Reading Helmet"", True], [""Laser Beam Glasses"", True]]
+print(numInventions(inventions))
+    ";370.104;840;5;5;5;2;"Tuples"
+345;"silver-wolf";"2024-12-05 10:28:26";0;11;"def atlCoffee(aList):
+    if aList = []:
+        return {}
+    name = aList[0]
+    area = aList[1]
+    rating = aList[2]
+    newDict = atlCoffee(aList[1:])
+    if rating > 5:
+        if area in newDict:
+            newDict[area].append(name)
+            newDict[area].sort()
+        else:
+            newDict[area] = [name]
+    else:
+        return {}
+    return newDict
+        
+        ";456.133;542;1;0;5;3;"Recursion"
+346;"silver-wolf";"2024-12-05 10:28:33";0;11;"def atlCoffee(aList):
+    if aList == []:
+        return {}
+    name = aList[0]
+    area = aList[1]
+    rating = aList[2]
+    newDict = atlCoffee(aList[1:])
+    if rating > 5:
+        if area in newDict:
+            newDict[area].append(name)
+            newDict[area].sort()
+        else:
+            newDict[area] = [name]
+    else:
+        return {}
+    return newDict
+        
+        ";463.572;543;2;0;5;3;"Recursion"
+347;"silver-wolf";"2024-12-05 10:29:38";0;11;"def atlCoffee(aList):
+    if aList == []:
+        return {}
+    name = aList[0]
+    area = aList[1]
+    rating = aList[2]
+    newDict = atlCoffee(aList[1:])
+    if rating > 5:
+        if area in newDict:
+            newDict[area].append(name)
+            newDict[area].sort()
+        else:
+            newDict[area] = [name]
+    
+    return newDict
+        
+        ";528.195;566;3;0;5;3;"Recursion"
+348;"silver-wolf";"2024-12-05 10:31:11";0;11;"def atlCoffee(aList):
+    if aList == []:
+        return {}
+    name = aList[0][0]
+    area = aList[0][1]
+    rating = aList[0][2]
+    newDict = atlCoffee(aList[1:])
+    if rating > 5:
+        if area in newDict:
+            newDict[area].append(name)
+            newDict[area].sort()
+        else:
+            newDict[area] = [name]
+    else:
+        return {}
+    return newDict
+        
+        ";621.909;674;4;5;5;3;"Recursion"
+349;"amber-bison";"2024-12-05 12:40:02";0;13;"def cookingClass(date, isWeekend):
+    if date % 2 == 1 and isWeekend == True:
+        return ""Let's check if there is a cooking class on day {}!"".format(date)
+    elif date % 2 == 0 and isWeekend == True:
+        return ""Let's go cooking on day {}!"".format(date)
+    elif date % 2 == 1 and isWeekend == False:
+        return ""Let's go cooking on day {}!"".format(date)
+    else:
+        return ""Let's plan for some other day.""
+        ";279.966;521;1;5;5;2;"Conditional"
+350;"amber-bison";"2024-12-05 12:42:36";13;12;"def toCook(numClasses, diningDollars):
+    if numClasses > 3 and diningDollars > 10:
+        return ""Let's get Panda Express!""
+    elif numClasses <= 3 and diningDollars >= 50:
+        return ""Let's splurge on Chick-fil-A!""
+    else:
+        return ""Guess I'll have to cook myself.""";136.267;308;1;5;5;2;"Conditional"
+351;"amber-bison";"2024-12-05 12:50:01";0;16;"def gnomeAccounting(orderNumbers, orderLength):
+    oLen1 = 0
+    i1 = 0
+    i2 = 0
+    for i in range(len(orderNumbers)):
+        if orderNumbers[i] == 1 and i1 == 0:
+            i1 = i
+        elif orderNumbers[i] == 1 and i1 != 0:
+            i2 = i
+    oLen1 = i2 - i1
+    if oLen1 < orderLength or oLen1 == 0:
+        return 'Slow day today!'
+    else:
+        return orderNumbers[i1:i2+1]
+        ";424.051;483;1;1;5;4;"Iteration"
+352;"amber-bison";"2024-12-05 12:51:51";0;16;"def gnomeAccounting(orderNumbers, orderLength):
+    orderNumbers = str(orderNumbers)
+    oLen1 = 0
+    i1 = 0
+    i2 = 0
+    for i in range(len(orderNumbers)):
+        if orderNumbers[i] == 1 and i1 == 0:
+            i1 = i
+        elif orderNumbers[i] == 1 and i1 != 0:
+            i2 = i
+    oLen1 = i2 - i1
+    if oLen1 < orderLength or oLen1 == 0:
+        return 'Slow day today!'
+    else:
+        return orderNumbers[i1:i2+1]
+        ";533.884;524;2;1;5;4;"Iteration"
+353;"amber-bison";"2024-12-05 13:00:11";16;14;"def demystifyMessage(jumbledMessage):
+    unscrambledMessage = """"
+    for i in range(len(jumbledMessage)):
+        if i % 2 == 0 and jumbledMessage[i].isalpha():
+            unscrambledMessage = unscrambledMessage + jumbledMessage[i]
+    return unscrambledMessage";173.76;291;1;5;5;4;"Iteration"
+354;"amber-bison";"2024-12-05 13:06:07";14;15;"def captureTheFlag(directions):
+    directions = directions[::-1]
+    for i in range(len(directions)):
+        try:
+            if directions[i] == 'L':
+                print('Turn Right!')
+            elif directions[i] == 'R':
+                print('Turn Left!')
+            elif directions[i] == 'W':
+                return 'Poseidon is my dad?!'
+        except:
+            return 'Made it back!'
+        ";339.923;529;1;0;5;4;"Iteration"
+355;"amber-bison";"2024-12-05 13:09:49";14;15;"def captureTheFlag(directions):
+    directions = directions[::-1]
+    lenC = 0
+    for i in range(len(directions)):
+        if lenC == len(directions):
+            return 'Made it back!'
+        if directions[i] == 'L':
+            print('Turn Right!')
+            lenC += 1
+        elif directions[i] == 'R':
+            print('Turn Left!')
+            lenC += 1
+        elif directions[i] == 'W':
+            return 'Poseidon is my dad?!'
+        ";561.825;771;2;0;5;4;"Iteration"
+356;"amber-bison";"2024-12-05 13:12:24";14;15;"def captureTheFlag(directions):
+    directions = directions[::-1]
+    lenC = 0
+    for i in range(len(directions) + 1):
+        if lenC == len(directions):
+            return 'Made it back!'
+        if directions[i] == 'L':
+            print('Turn Right!')
+            lenC += 1
+        elif directions[i] == 'R':
+            print('Turn Left!')
+            lenC += 1
+        elif directions[i] == 'W':
+            return 'Poseidon is my dad?!'
+        ";716.678;775;3;0;5;4;"Iteration"
+357;"amber-bison";"2024-12-05 13:17:28";0;18;"def decryptValentine(encryptedMessage, key):
+    decryptedMessage = """"
+    for i in range(len(encryptedMessage)):
+        if i % key == 0:
+            decryptedMessage = decryptedMessage + encryptedMessage[i]
+    decryptedMessage = decryptedMessage[::-1]
+    return decryptedMessage";137.237;358;1;5;5;3;"Strings"
+358;"amber-bison";"2024-12-05 13:23:19";18;17;"def countCase(loveLetter):
+    uCount = 0
+    lCount = 0
+    for char in loveLetter:
+        if char.isalpha() == False:
+            continue
+        else:
+            if char.islower():
+                lCount += 1
+            elif char.isupper():
+                uCount += 1
+    if uCount == lCount:
+        return ""Our love story is perfectly balanced, just like us.""
+    elif uCount < lCount:
+        return ""Sweetheart, I need {} more uppercase character(s) in our love tale."".format(str(lCount - uCount))
+    else:
+        ""Darling, I need {} more lowercase character(s) in our love story."".format(str(uCount - lCount))
+
+
+        ";336.118;897;1;4;5;3;"Strings"
+359;"amber-bison";"2024-12-05 13:24:02";18;17;"def countCase(loveLetter):
+    uCount = 0
+    lCount = 0
+    for char in loveLetter:
+        if char.isalpha() == False:
+            continue
+        else:
+            if char.islower():
+                lCount += 1
+            elif char.isupper():
+                uCount += 1
+    if uCount == lCount:
+        return ""Our love story is perfectly balanced, just like us.""
+    elif uCount < lCount:
+        return ""Sweetheart, I need {} more uppercase character(s) in our love tale."".format(str(lCount - uCount))
+    else:
+        return ""Darling, I need {} more lowercase character(s) in our love story."".format(str(uCount - lCount))
+
+
+        ";379.944;904;2;5;5;3;"Strings"
+360;"amber-bison";"2024-12-05 13:26:48";0;19;"def findLove(candidates, favCity, favColors):
+    matches = []
+    for cand in candidates:
+        if cand[1] == favCity and cand[2] in favColors:
+            matches.append(cand[0])
+    return matches";144.569;219;1;4;5;3;"Lists"
+361;"amber-bison";"2024-12-05 13:27:05";0;19;"def findLove(candidates, favCity, favColors):
+    matches = []
+    for cand in candidates:
+        if cand[1] == favCity and cand[2] in favColors:
+            matches.append(cand[0])
+    matches.sort()
+    return matches";160.954;254;2;5;5;3;"Lists"
+362;"amber-bison";"2024-12-05 13:35:01";0;1;"def eatingOut(yourList, friendList):
+    sharedRestaurants = []
+    for place in yourList:
+        if place in friendList:
+            sharedRestaurants.append(place)
+    sharedRestaurants.sort()
+    if len(sharedRestaurants) == 0:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        return sharedRestaurants";111.599;363;1;5;5;3;"Lists"
+363;"amber-bison";"2024-12-05 13:38:14";3;20;"def numInventions(inventions):
+    completed = 0
+    for invention in inventions:
+        if invention[1] == True:
+            completed += 1
+    if completed != 0:
+        return completed
+    else:
+        return ""We still have 104 days to invent something!""";106.587;300;1;5;5;3;"Tuples"
+364;"amber-bison";"2024-12-05 13:40:49";20;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for time, name in unorganizedTimeList:
+        time.sort()
+        organizedTimeList.append((name, time))
+    organizedTimeList.sort()
+    return organizedTimeList
+        ";139.905;255;1;0;5;3;"Tuples"
+365;"amber-bison";"2024-12-05 13:40:49";20;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for time, name in unorganizedTimeList:
+        time.sort()
+        organizedTimeList.append((name, time))
+    organizedTimeList.sort()
+    return organizedTimeList
+        ";139.905;255;1;0;5;3;"Modules"
+366;"amber-bison";"2024-12-05 13:41:32";20;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for time, name in unorganizedTimeList:
+        time.sort()
+        time = [time[0][] + [time[1]]
+        organizedTimeList.append((name, time))
+    organizedTimeList.sort()
+    return organizedTimeList
+        ";182.454;329;2;0;5;3;"Tuples"
+367;"amber-bison";"2024-12-05 13:41:32";20;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for time, name in unorganizedTimeList:
+        time.sort()
+        time = [time[0][] + [time[1]]
+        organizedTimeList.append((name, time))
+    organizedTimeList.sort()
+    return organizedTimeList
+        ";182.454;329;2;0;5;3;"Modules"
+368;"amber-bison";"2024-12-05 13:41:42";20;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for time, name in unorganizedTimeList:
+        time.sort()
+        time = [time[0]] + [time[1]]
+        organizedTimeList.append((name, time))
+    organizedTimeList.sort()
+    return organizedTimeList
+        ";192.514;332;3;0;5;3;"Tuples"
+369;"amber-bison";"2024-12-05 13:41:42";20;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for time, name in unorganizedTimeList:
+        time.sort()
+        time = [time[0]] + [time[1]]
+        organizedTimeList.append((name, time))
+    organizedTimeList.sort()
+    return organizedTimeList
+        ";192.514;332;3;0;5;3;"Modules"
+370;"amber-bison";"2024-12-05 13:42:13";20;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for time, name in unorganizedTimeList:
+        time.sort()
+        time = [time[0]] + [time[1]]
+        organizedTimeList.append([name, time])
+    organizedTimeList.sort()
+    return organizedTimeList
+        ";223.615;336;4;5;5;3;"Tuples"
+371;"amber-bison";"2024-12-05 13:42:13";20;2;"def organizeTimes(unorganizedTimeList):
+    organizedTimeList = []
+    for time, name in unorganizedTimeList:
+        time.sort()
+        time = [time[0]] + [time[1]]
+        organizedTimeList.append([name, time])
+    organizedTimeList.sort()
+    return organizedTimeList
+        ";223.615;336;4;5;5;3;"Modules"
+372;"amber-bison";"2024-12-05 13:52:16";0;22;"def foulCount(teamList):
+    totalFouls = [[], 0]
+    if team[1] < 0:
+        totalFouls[0].append(""{} has an incorrect foul count"".format(team[0]))
+        totalFouls[1] += team[1]
+        foulCount[1:]
+    elif team[1] > 25:
+        totalFouls[0].append(""{} has too many fouls!"".format(team[0]))
+        totalFouls[1] += team[1]
+        foulCount[1:]
+    else:
+        totalFouls[1] += team[1]
+        foulCount[1:]
+    return totalFouls
+        ";315.058;616;1;0;5;4;"Recursion"
+373;"amber-bison";"2024-12-05 13:53:24";0;22;"def foulCount(teamList):
+    totalFouls = [[], 0]
+    if teamList[0][1] < 0:
+        totalFouls[0].append(""{} has an incorrect foul count"".format(teamList[0][0]))
+        totalFouls[1] += teamList[0][1]
+        foulCount[1:]
+    elif teamList[0][1] > 25:
+        totalFouls[0].append(""{} has too many fouls!"".format(teamList[0][0]))
+        totalFouls[1] += teamList[0][1]
+        foulCount[1:]
+    else:
+        totalFouls[1] += teamList[0][1]
+        foulCount[1:]
+    return totalFouls
+        ";383.394;695;2;0;5;4;"Recursion"
+374;"amber-bison";"2024-12-05 13:54:21";0;22;"def foulCount(teamList):
+    totalFouls = [[], 0]
+    if teamList[0][1] < 0:
+        totalFouls[0].append(""{} has an incorrect foul count"".format(teamList[0][0]))
+        return totalFouls[1] += teamList[0][1] + foulCount[1:]
+    elif teamList[0][1] > 25:
+        totalFouls[0].append(""{} has too many fouls!"".format(teamList[0][0]))
+        return totalFouls[1] += teamList[0][1] + foulCount[1:]
+    else:
+        return totalFouls[1] += teamList[0][1] + foulCount[1:]
+        ";439.817;850;3;0;5;4;"Recursion"
+375;"indigo-elephant";"2024-12-05 14:47:46";0;10;"def numCoffees(num):
+    if num == 0:
+        print(""No more coffee!"")
+    else:
+        print(f""Coffees left: {num}"")
+        return numCoffees(num-1)
+
+numCoffees(4)
+";115.886;203;1;0;5;2;"Recursion"
+376;"indigo-elephant";"2024-12-05 14:49:29";0;10;"def numCoffees(num):
+    if num <= 0:
+        return [""No more coffee!""]
+    else:
+        return [f""Coffees left: {num}""] + numCoffees(num-1)
+
+
+";218.642;307;2;5;5;2;"Recursion"
+377;"indigo-elephant";"2024-12-05 14:52:42";10;11;"def atlCoffee(shopList):
+    if not shopList:
+        return {}
+    else:
+        shopDict = atlCoffee(shopList[1:])
+        name, loc, rate = shopDict[1]
+        if rate > 5:
+            if loc not in shopDict:
+                shopDict[loc] = []
+            shopDict[loc] += name
+        return shopDict";161.376;356;1;0;5;3;"Recursion"
+378;"indigo-elephant";"2024-12-05 14:53:17";10;11;"def atlCoffee(shopList):
+    if not shopList:
+        shopDict = {}
+    else:
+        shopDict = atlCoffee(shopList[1:])
+        name, loc, rate = shopDict[0]
+        if rate > 5:
+            if loc not in shopDict:
+                shopDict[loc] = []
+            shopDict[loc] += name
+    return shopDict";196.592;378;2;0;5;3;"Recursion"
+379;"indigo-elephant";"2024-12-05 14:54:00";10;11;"def atlCoffee(shopList):
+    if not shopList:
+        shopDict = {}
+    else:
+        shopDict = atlCoffee(shopList[1:])
+        name, loc, rate = shopDict[0]
+        if rate > 5:
+            if loc not in shopDict:
+                shopDict[loc] = []
+            shopDict[loc] += name
+            shopDict[loc].sort()
+        
+    return shopDict";238.951;430;3;0;5;3;"Recursion"
+380;"indigo-elephant";"2024-12-05 14:56:09";10;11;"def atlCoffee(shopList):
+    if not shopList:
+        shopDict = {}
+    else:
+        shopDict = atlCoffee(shopList[1:])
+        name, loc, rate = shopList[0]
+        if rate > 5:
+            if loc not in shopDict:
+                shopDict[loc] = []
+            shopDict[loc] += name
+            shopDict[loc].sort()
+        
+    return shopDict";367.812;436;4;1;5;3;"Recursion"
+381;"indigo-elephant";"2024-12-05 14:56:56";10;11;"def atlCoffee(shopList):
+    if not shopList:
+        shopDict = {}
+    else:
+        shopDict = atlCoffee(shopList[1:])
+        name, loc, rate = shopList[0]
+        if rate > 5:
+            if loc not in shopDict:
+                shopDict[loc] = []
+            shopDict[loc] += name
+            shopDict[loc] = sorted(shopDict[loc])
+        
+    return shopDict";414.952;469;5;1;5;3;"Recursion"
+382;"indigo-elephant";"2024-12-05 14:57:33";10;11;"def atlCoffee(shopList):
+    if not shopList:
+        shopDict = {}
+    else:
+        shopDict = atlCoffee(shopList[1:])
+        name, loc, rate = shopList[0]
+        if rate > 5:
+            if loc not in shopDict:
+                shopDict[loc] = []
+            shopDict[loc].append(name)
+            shopDict[loc].sort()
+        
+    return shopDict";452.66;515;6;5;5;3;"Recursion"
+383;"charcoal-falcon";"2024-12-05 15:29:41";0;11;"def atlCoffee(coffeeList):
+    if coffeeList == []:
+        return {}
+    aDict = atlCoffee(coffeeList[1:])
+    if coffeeList[0][2] > 5:
+        if coffeeList[0][1] in aDict:
+            aDict[coffeeList[0][1]].append(coffeeList[0][0])
+        else:
+            aDict[coffeeList[0][1]] = [coffeeList[0][0]]
+    return aDict";282.923;501;1;3;5;3;"Recursion"
+384;"charcoal-falcon";"2024-12-05 15:30:26";0;11;"def atlCoffee(coffeeList):
+    if coffeeList == []:
+        return {}
+    aDict = atlCoffee(coffeeList[1:])
+    if coffeeList[0][2] > 5:
+        if coffeeList[0][1] in aDict:
+            aDict[coffeeList[0][1]].append(coffeeList[0][0])
+            aDict[coffeeList[0][1]].sort()
+        else:
+            aDict[coffeeList[0][1]] = [coffeeList[0][0]]
+    return aDict";328.718;544;2;5;5;3;"Recursion"
+385;"charcoal-falcon";"2024-12-05 15:33:22";22;10;"def numCoffees(num):
+    if num <= 0:
+        print(""No more coffee!"")
+    print(f""Coffees left: {num}"")
+    return numCoffees(num-1)";130.683;217;1;0;5;1;"Recursion"
+386;"charcoal-falcon";"2024-12-05 15:34:36";22;10;"def numCoffees(num):
+    if num <= 0:
+        print(""No more coffee!"")
+    print(f""Coffees left: {num}"")
+    return numCoffees(num-1)";204.325;217;2;0;5;1;"Recursion"
+387;"charcoal-falcon";"2024-12-05 15:36:45";22;10;"def numCoffees(num):
+    if num <= 0:
+        print(""No more coffee!"")
+        return None
+    print(f""Coffees left: {num}"")
+    return numCoffees(num-1)";333.702;247;3;0;5;1;"Recursion"
+388;"charcoal-falcon";"2024-12-05 15:36:51";22;10;"def numCoffees(num):
+    if num <= 0:
+        print(""No more coffee!"")
+        
+    print(f""Coffees left: {num}"")
+    return numCoffees(num-1)";339.262;258;4;0;5;1;"Recursion"
+389;"charcoal-falcon";"2024-12-05 15:36:54";22;10;"def numCoffees(num):
+    if num <= 0:
+        print(""No more coffee!"")
+        
+    print(f""Coffees left: {num}"")
+    return numCoffees(num-1)";342.323;258;5;0;5;1;"Recursion"
+390;"charcoal-falcon";"2024-12-05 15:37:01";22;10;"def numCoffees(num):
+    if num <= 0:
+        print(""No more coffee!"")
+        return None
+    print(f""Coffees left: {num}"")
+    return numCoffees(num-1)";349.653;271;6;0;5;1;"Recursion"
+391;"charcoal-falcon";"2024-12-05 15:49:37";0;7;"def inSeason(favDrinks, month):
+    infile = open(""summerDrinks.csv"")
+    header = infile.readline()
+    data = infile.readlines()
+    finalList = []
+    for line in data:
+        linepieces = line.strip().split("","")
+        drink = linepieces[0]
+        temp = linepieces[1]
+        caff = linepieces[2]
+        monthOS = linepieces[3]
+        if drink in favDrinks:
+            if monthOS == month:
+                if caff = ""uncaffeinated""
+                    finalList.append(drink)
+    if finalList == []:
+        return ""Nothing is in season:(""
+    return finalList
+                    ";458.408;850;1;0;5;3;"CSV"
+392;"charcoal-falcon";"2024-12-05 15:49:44";0;7;"def inSeason(favDrinks, month):
+    infile = open(""summerDrinks.csv"")
+    header = infile.readline()
+    data = infile.readlines()
+    finalList = []
+    for line in data:
+        linepieces = line.strip().split("","")
+        drink = linepieces[0]
+        temp = linepieces[1]
+        caff = linepieces[2]
+        monthOS = linepieces[3]
+        if drink in favDrinks:
+            if monthOS == month:
+                if caff == ""uncaffeinated""
+                    finalList.append(drink)
+    if finalList == []:
+        return ""Nothing is in season:(""
+    return finalList
+                    ";465.527;851;2;0;5;3;"CSV"
+393;"charcoal-falcon";"2024-12-05 15:49:49";0;7;"def inSeason(favDrinks, month):
+    infile = open(""summerDrinks.csv"")
+    header = infile.readline()
+    data = infile.readlines()
+    finalList = []
+    for line in data:
+        linepieces = line.strip().split("","")
+        drink = linepieces[0]
+        temp = linepieces[1]
+        caff = linepieces[2]
+        monthOS = linepieces[3]
+        if drink in favDrinks:
+            if monthOS == month:
+                if caff == ""uncaffeinated""
+                    finalList.append(drink)
+    if finalList == []:
+        return ""Nothing is in season:(""
+    return finalList
+                    ";470.771;851;3;0;5;3;"CSV"
+394;"charcoal-falcon";"2024-12-05 15:50:22";0;7;"def inSeason(favDrinks, month):
+    infile = open(""summerDrinks.csv"")
+    header = infile.readline()
+    data = infile.readlines()
+    finalList = []
+    for line in data:
+        linepieces = line.strip().split("","")
+        drink = linepieces[0]
+        temp = linepieces[1]
+        caff = linepieces[2]
+        monthOS = linepieces[3]
+        if drink in favDrinks:
+            if monthOS == month:
+                if caff == ""uncaffeinated"":
+                    finalList.append(drink)
+    if finalList == []:
+        return ""Nothing is in season:(""
+    return finalList
+                    ";503.581;886;4;0;5;3;"CSV"
+395;"charcoal-falcon";"2024-12-05 15:50:35";0;7;"def inSeason(favDrinks, month):
+    infile = open(""files/summerDrinks.csv"")
+    header = infile.readline()
+    data = infile.readlines()
+    finalList = []
+    for line in data:
+        linepieces = line.strip().split("","")
+        drink = linepieces[0]
+        temp = linepieces[1]
+        caff = linepieces[2]
+        monthOS = linepieces[3]
+        if drink in favDrinks:
+            if monthOS == month:
+                if caff == ""uncaffeinated"":
+                    finalList.append(drink)
+    if finalList == []:
+        return ""Nothing is in season:(""
+    return finalList
+                    ";516.91;894;5;2;5;3;"CSV"
+396;"charcoal-falcon";"2024-12-05 15:50:52";0;7;"def inSeason(favDrinks, month):
+    infile = open(""files/summerDrinks.csv"")
+    header = infile.readline()
+    data = infile.readlines()
+    finalList = []
+    for line in data:
+        linepieces = line.strip().split("","")
+        drink = linepieces[0]
+        temp = linepieces[1]
+        caff = linepieces[2]
+        monthOS = linepieces[3]
+        if drink in favDrinks:
+            if monthOS == month:
+                if caff == ""uncaffeinated"":
+                    finalList.append(drink)
+    if finalList == []:
+        return ""Nothing is in season :(""
+    return finalList
+                    ";533.225;895;6;5;5;3;"CSV"
+397;"cyan-coyote";"2024-12-05 16:00:31";0;13;"def cookingClass(date, isWeekend):
+    if date % 2 == 1:
+        if isWeekend:
+            return f""Let's check if there is a cooking class on day {date}!""
+        else:
+            return f""Let's go cooking on day {date}!""
+    else:
+        if isWeekend:
+            return f""Let's go cooking on day {date}!""
+        else:
+            return f""Let's plan for some other day.""";174.402;442;1;5;5;1;"Conditional"
+398;"cyan-coyote";"2024-12-05 16:03:14";13;12;"def toCook(numClasses, diningDollars):
+    if numClasses > 3 and diningDollars > 10:
+        return ""Let's get Panda Express!""
+    elif numClasses < 3 and diningDollars >= 50:
+        return ""Let's splurge on Chick-fil-A!""
+    else:
+        return ""Guess I'll have to cook myself.""";112.576;315;1;5;5;1;"Conditional"
+399;"cyan-coyote";"2024-12-05 16:06:18";0;15;"def captureTheFlag(directions):
+    for i in directions:
+        if i == 'L':
+            print('Turn left!')
+        elif i == 'R':
+            print('Turn right!')
+        elif i == 'W':
+            return 'Poseidon is my dad?!'
+    return 'Made it back!'";163.429;297;1;0;5;2;"Iteration"
+400;"cyan-coyote";"2024-12-05 16:07:31";0;15;"def captureTheFlag(directions):
+    result = ''
+    for i in directions[::-1]:
+        if i == 'L':
+            print('Turn left!')
+        elif i == 'R':
+            print('Turn right!')
+        elif i == 'W':
+            return 'Poseidon is my dad?!'
+    return 'Made it back!'";237.018;319;2;0;5;2;"Iteration"
+401;"cyan-coyote";"2024-12-05 16:08:36";0;15;"def captureTheFlag(directions):
+    result = []
+    for i in directions[::-1]:
+        if i == 'L':
+            result.append('Turn left!')
+        elif i == 'R':
+            result.append('Turn right!')
+        elif i == 'W':
+            result.append('Poseidon is my dad?!')
+            return result
+    result.append('Made it back!')
+    return result";301.304;425;3;5;5;3;"Iteration"
+402;"cyan-coyote";"2024-12-05 16:14:41";15;16;"def gnomeAccounting(orderNumbers, orderLength):
+    num = ''
+    if len(orderNumbers) < orderLength:
+        return 'Slow day today!'
+    for i in range(0, len(orderNumbers), orderLength):
+        if orderNumbers[i:i+orderLength][0] == '1' and  orderNumbers[i:i+orderLength][-1] == '1':
+            num += orderNumbers[i:i+orderLength]
+    if num:
+        return num
+    else:
+        return 'Slow day today!'";337.388;859;1;4;5;3;"Iteration"
+403;"cyan-coyote";"2024-12-05 16:17:13";16;14;"def demystifyMessage(j):
+    u = ''
+    for i, char in enumerate(j):
+        if i % 2 == 0 and char.isalpha():
+            u += char
+    return u";86.4472;213;1;5;5;1;"Iteration"
+404;"cyan-coyote";"2024-12-05 16:23:10";0;17;"def countCase(loveLetter):
+    lower = 0
+    upper = 0
+    for i in loveLetter:
+        if i.isalpha() and i.islower():
+            lower += 1
+        elif: i.isalpha() and i.isupper():
+            upper += 1
+    if lower == upper:
+        return ""Our love story is perfectly balanced, just like us.""
+    elif lower > upper:
+        return f""Sweetheart, I need {lower-upper} more uppercase character(s) in our love tale.""
+    else:
+        return f""Darling, I need {upper-lower} more lowercase character(s) in our love story.""";180.934;642;1;0;5;2;"Strings"
+405;"cyan-coyote";"2024-12-05 16:23:18";0;17;"def countCase(loveLetter):
+    lower = 0
+    upper = 0
+    for i in loveLetter:
+        if i.isalpha() and i.islower():
+            lower += 1
+        elif i.isalpha() and i.isupper():
+            upper += 1
+    if lower == upper:
+        return ""Our love story is perfectly balanced, just like us.""
+    elif lower > upper:
+        return f""Sweetheart, I need {lower-upper} more uppercase character(s) in our love tale.""
+    else:
+        return f""Darling, I need {upper-lower} more lowercase character(s) in our love story.""";188.929;645;2;5;5;2;"Strings"
+406;"cyan-coyote";"2024-12-05 16:24:59";17;18;"def decryptValentine(e, key):
+    d = ''
+    for i, char in enumerate(e):
+        if i % key == 0:
+            d = char + d
+    return d";92.2547;240;1;5;5;2;"Strings"
+407;"cyan-coyote";"2024-12-05 16:27:14";0;19;"def findLove(candidates, favCity, favColors):
+    matches = []
+    for info in candidates:
+        if info[1] == favCity:
+            if info[2] in favColors:
+                matches.append(info[0])
+    return matches";115.573;249;1;4;5;1;"Lists"
+408;"cyan-coyote";"2024-12-05 16:27:25";0;19;"def findLove(candidates, favCity, favColors):
+    matches = []
+    for info in candidates:
+        if info[1] == favCity:
+            if info[2] in favColors:
+                matches.append(info[0])
+    return sorted(matches)";126.241;257;2;5;5;1;"Lists"
+409;"cyan-coyote";"2024-12-05 16:29:04";19;1;"def eatingOut(yourList, friendList):
+    shared = []
+    for i in yourList:
+        if i in friendList:
+            shared.append(i)
+    shared.sort()
+    if shared:
+        return shared
+    else:
+        return ""Whatever, we'll go to Nave.""";91.0;310;1;5;5;1;"Lists"
+410;"cyan-coyote";"2024-12-05 18:30:10";3;20;"def numInventions(inventions):
+    completed = 0
+    for inf in inventions:
+        if inf[1]:
+            completed += 1
+    if completed:
+        return completed
+    else:
+        return ""We still have 104 days to invent something!""";4098.45;283;1;5;5;1;"Tuples"
+411;"cyan-coyote";"2024-12-05 18:34:21";0;5;"def creditHours(courseCatalog, myCourses):
+    tot = 0
+    for subdict in myCourses:
+        for course, num in subdict.items():
+            tot += courseCatalog[course][num]
+            
+    return tot";152.916;230;1;2;5;2;"Dictionaries"
+412;"cyan-coyote";"2024-12-05 18:35:53";0;5;"def creditHours(courseCatalog, myCourses):
+    tot = 0
+    for course, num in myCourses.items():
+        tot += courseCatalog[course][num]
+            
+    return tot";245.477;270;2;2;5;2;"Dictionaries"
+413;"cyan-coyote";"2024-12-05 18:40:12";0;11;"def atlCoffee(listOfShops):
+    if listOfShops == []:
+        return {}
+    else:
+        shopsToVisit = atlCoffee(listOfShops[1:])
+        shop, loc, rating = listOfShops[0]
+        if rating > 5:
+            if loc in shopsToVisit:
+                shopsToVisit[loc].append(shop)
+            else:
+                shopsToVisit[loc] = [shop]
+        shopsToVisit.sort()
+        return shopsToVisit";229.508;477;1;0;5;3;"Recursion"
+414;"cyan-coyote";"2024-12-05 18:40:21";0;11;"def atlCoffee(listOfShops):
+    if listOfShops == []:
+        return {}
+    else:
+        shopsToVisit = atlCoffee(listOfShops[1:])
+        shop, loc, rating = listOfShops[0]
+        if rating > 5:
+            if loc in shopsToVisit:
+                shopsToVisit[loc].append(shop)
+            else:
+                shopsToVisit[loc] = [shop]
+        shopsToVisit[loc].sort()
+        return shopsToVisit";238.21;482;2;4;5;3;"Recursion"
+415;"cyan-coyote";"2024-12-05 18:41:44";0;11;"def atlCoffee(listOfShops):
+    if listOfShops == []:
+        return {}
+    else:
+        shopsToVisit = atlCoffee(listOfShops[1:])
+        shop, loc, rating = listOfShops[0]
+        if rating > 5:
+            if loc in shopsToVisit:
+                shopsToVisit[loc].append(shop)
+                shopsToVisit[loc].sort()
+            else:
+                shopsToVisit[loc] = [shop]
+        shopsToVisit[loc].sort()
+        return shopsToVisit";320.939;523;3;4;5;3;"Recursion"
+416;"cyan-coyote";"2024-12-05 18:42:44";0;11;"def atlCoffee(listOfshops):
+    if listOfshops == []:
+        return {}   #base case
+    else:
+        shopsToVisit = atlCoffee(listOfshops[1:])   #step
+        #only add if rating is high enough
+        if listOfshops[0][2] > 3:
+            #dictionary adding schenanigans
+            if listOfshops[0][1] in shopsToVisit:
+                shopsToVisit[listOfshops[0][1]].append(listOfshops[0][0])
+                shopsToVisit[listOfshops[0][1]].sort()
+            else:
+                shopsToVisit[listOfshops[0][1]] = [listOfshops[0][0]]
+
+    return shopsToVisit";380.809;659;4;5;5;3;"Recursion"
+417;"charcoal-bald eagle";"2024-12-05 18:54:24";0;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    else:
+        newList = foulCount(tList[1:])
+        if tList[0][1] > 25:
+            newList[0].append(f""{tList[0][0]} has too many fouls!"")
+        if tList[0][1] < 0:
+            newList[0].append(f""{tList[0][0]} has an incorrect foul count."")
+        newList[1] += tList[0][1]
+        return newList
+        
+";554.575;705;1;2;5;4;"Recursion"
+418;"green-raven";"2024-12-06 00:17:09";0;12;"def toCook(classes, money):
+    if classes > 3 and money > 10:
+        return ""Let's get Panda Express!""
+    elif classes <= 3 and money >= 50:
+        return ""Let's splurge on Chick-fil-A!""
+    else:
+        return ""Guess I'll have to cook myself.""";155.008;309;1;5;5;5;"Conditional"
+419;"green-raven";"2024-12-06 00:17:14";0;12;"def toCook(classes, money):
+    if classes > 3 and money > 10:
+        return ""Let's get Panda Express!""
+    elif classes <= 3 and money >= 50:
+        return ""Let's splurge on Chick-fil-A!""
+    else:
+        return ""Guess I'll have to cook myself.""";159.338;309;2;5;5;1;"Conditional"
+420;"green-raven";"2024-12-06 00:26:24";0;16;"def gnomeAccounting(order, amount):
+    for i in range(:len(order):amount):
+        if order[i]==1 and if order[i+amount-1]== 1:
+            return order[i:i+amount]
+    return ""Slow day today!""";362.758;336;1;0;5;1;"Iteration"
+421;"green-raven";"2024-12-06 00:27:00";0;16;"def gnomeAccounting(order, amount):
+    for i in range(0:len(order):amount):
+        if order[i]==1 and if order[i+amount-1]== 1:
+            return order[i:i+amount]
+    return ""Slow day today!""";398.403;337;2;0;5;1;"Iteration"
+422;"green-raven";"2024-12-06 00:27:54";0;16;"def gnomeAccounting(order, amount):
+    for i in range(0:len(order):amount):
+        if order[i]==1 and order[i+amount-1] == 1:
+            return order[i:i+amount]
+    return ""Slow day today!""";453.053;341;3;0;5;1;"Iteration"
+423;"rose-cheetah";"2024-12-06 00:36:04";0;18;"def decryptValentine(msg, key):
+    newStr = """"
+    for i in range(0,len(msg),key):
+        newStr += i
+    newStr.reverse()";46.1674;142;1;0;5;1;"Strings"
+424;"rose-cheetah";"2024-12-06 00:37:33";0;18;"def decryptValentine(msg, key):
+    newStr = """"
+    for i in range(0,len(msg),key):
+        newStr += msg[i]
+    newStr = newStr.reverse()";47.084;148;1;0;5;1;"Strings"
+425;"rose-cheetah";"2024-12-06 00:45:21";0;17;"def countCase(sentence):
+    upLetter = 0
+    lowLetter = 0
+    for item in sentence:
+        if item.isUpper():
+            upLetter += 1
+        elif item.isLower():
+            lowLetter += 1
+    if upLetter > lowLetter:
+        return ""Darling, I need {difference} more lowercase character(s) in our love story.""
+    elif lowLetter > upLetter:
+        return ""Sweetheart, I need {difference} more uppercase character(s) in our love tale.""
+    else:
+        return ""Our love story is perfectly balanced, just like us.""";160.979;591;1;1;5;5;"Strings"
+426;"rose-cheetah";"2024-12-06 00:46:04";0;17;"def countCase(sentence):
+    upLetter = 0
+    lowLetter = 0
+    for item in sentence:
+        if item.isAlpha():
+            if item.isUpper():
+                upLetter += 1
+            elif item.isLower():
+                lowLetter += 1
+        else:
+            continue
+    if upLetter > lowLetter:
+        return ""Darling, I need {difference} more lowercase character(s) in our love story.""
+    elif lowLetter > upLetter:
+        return ""Sweetheart, I need {difference} more uppercase character(s) in our love tale.""
+    else:
+        return ""Our love story is perfectly balanced, just like us.""";203.681;723;2;1;5;5;"Strings"
+427;"rose-cheetah";"2024-12-06 00:47:09";0;17;"def countCase(sentence):
+    upLetter = 0
+    lowLetter = 0
+    for item in sentence:
+        if item.isalpha():
+            if item.isupper():
+                upLetter += 1
+            elif item.islower():
+                lowLetter += 1
+        else:
+            continue
+    if upLetter > lowLetter:
+        return ""Darling, I need {difference} more lowercase character(s) in our love story.""
+    elif lowLetter > upLetter:
+        return ""Sweetheart, I need {difference} more uppercase character(s) in our love tale.""
+    else:
+        return ""Our love story is perfectly balanced, just like us.""";268.455;727;3;3;5;5;"Strings"
+428;"rose-cheetah";"2024-12-06 00:51:13";0;1;"def sharedRestaurants(myList, fList):
+    sharedList = []
+    for item in myList:
+        for place in fList:
+            if item == place:
+                sharedList.append(place)
+    if sharedList == []:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        return sharedList.sort()";121.995;335;1;0;5;5;"Lists"
+429;"rose-cheetah";"2024-12-06 00:51:34";0;1;"def eatingOut(myList, fList):
+    sharedList = []
+    for item in myList:
+        for place in fList:
+            if item == place:
+                sharedList.append(place)
+    if sharedList == []:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        return sharedList.sort()";143.274;359;2;2;5;5;"Lists"
+430;"rose-cheetah";"2024-12-06 00:52:02";0;1;"def eatingOut(myList, fList):
+    sharedList = []
+    for item in myList:
+        for place in fList:
+            if item == place:
+                sharedList.append(place)
+    if sharedList == []:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        sharedList = sharedList.sort()
+        return sharedList";170.457;417;3;2;5;5;"Lists"
+431;"rose-cheetah";"2024-12-06 00:52:19";0;1;"def eatingOut(myList, fList):
+    sharedList = []
+    for item in myList:
+        for place in fList:
+            if item == place:
+                sharedList.append(place)
+    if sharedList == []:
+        return ""Whatever, we'll go to Nave.""
+    else:
+        sharedList.sort()
+        return sharedList";187.618;430;4;5;5;5;"Lists"
+432;"amber-cheetah";"2024-12-06 01:16:07";0;12;"def toCook(classNum, diningDollars):
+    if classNum > 3 and diningDollars > 10:
+        return ""Let's get Panda Express!""
+    elif classNum < 3 and diningDollars >= 50:
+        return ""Let's splurge on Chick-fil-A!""
+    else:
+        return ""Guess I'll have to cook myself.""";114.481;335;1;5;5;1;"Conditional"
+433;"amber-cheetah";"2024-12-06 01:19:22";12;13;"def cookingClass(date, onWeekend):
+    if date % 2 == 1 and onWeekend:
+        return f""Let's check if there is a cooking class on day {date}!""
+    elif (date % 2 == 0 and onWeekend) or (date % 2 == 1 and not onWeekend):
+        return f""Let's go cooking on day {date}!""
+    elif (date % 2 == 0 and not onWeekend):
+        return ""Let's plan for some other day.""";167.062;456;1;5;5;1;"Conditional"
+434;"amber-cheetah";"2024-12-06 01:21:58";0;14;"def demystifyMessage(jumbledMessage):
+    unscrambledMessage = """"
+    for i in range(len(jumbledMessage)):
+        if i % 2 == 0:
+            if jumbledMessage[i].isalpha():
+                unscrambledMessage += jumbledMessage[i]
+    return unscrambledMessage";97.176;311;1;5;5;1;"Iteration"
+435;"amber-cheetah";"2024-12-06 01:25:01";16;15;"def captureTheFlag(direction):
+    for char in direction[::-1]:
+        if char == ""R"":
+            print(""Turn right!"")
+        elif char == ""L"":
+            print(""Turn left!"")
+        elif char == ""W"":
+            return ""Poseidon is my dad?!""
+    return ""Made it back!""";141.512;331;1;0;5;1;"Iteration"
+436;"amber-cheetah";"2024-12-06 01:32:23";0;17;"def countCase(sentence):
+    uppercase = 0
+    lowercase = 0
+    for char in sentence:
+        if char.isalpha():
+            if char.isupper():
+                uppercase += 1
+            elif char.islower():
+                lowercase += 1
+    difference = abs(uppercase - lowercase)
+    if uppercase > lowercase:
+        return f""Darling, I need {difference} more lowercase character(s) in our love story.""
+    elif lowercase > uppercase:
+        return f""Sweetheart, I need {difference} more uppercase character(s) in our love tale.""
+    else:
+        return ""Our love story is perfectly balanced, just like us.""";4.45943;614;1;5;5;2;"Strings"
+437;"rose-cheetah";"2024-12-06 01:33:24";0;6;"def foreignFilms(movieList):
+    aDict = {}
+    ifile = open(""movies.txt"", ""r"")
+    header = ifile.readline()
+    body = ifile.readlines()
+    ifile.close()
+    for aTup in movieList:
+        name = aTup[0]
+        place = aTup[1]
+        aDict[name] = []
+        for i in range(2,len(body)-2,5):
+            if body[i].strip() == place:
+                if name in aDict:
+                    aDict[name].append(body[i-1])
+                    aDict[name].sort()
+    return aDict
+        ";496.695;808;1;0;4;5;"File I/O"
+438;"rose-cheetah";"2024-12-06 01:33:41";0;6;"def foreignFilms(movieList):
+    aDict = {}
+    ifile = open(""files/movies.txt"", ""r"")
+    header = ifile.readline()
+    body = ifile.readlines()
+    ifile.close()
+    for aTup in movieList:
+        name = aTup[0]
+        place = aTup[1]
+        aDict[name] = []
+        for i in range(2,len(body)-2,5):
+            if body[i].strip() == place:
+                if name in aDict:
+                    aDict[name].append(body[i-1])
+                    aDict[name].sort()
+    return aDict
+        ";514.081;816;2;0;4;5;"File I/O"
+439;"rose-cheetah";"2024-12-06 01:34:02";0;6;"def foreignFilms(movieList):
+    aDict = {}
+    ifile = open(""files/movies.txt"", ""r"")
+    header = ifile.readline()
+    body = ifile.readlines()
+    ifile.close()
+    for aTup in movieList:
+        name = aTup[0]
+        place = aTup[1]
+        aDict[name] = []
+        for i in range(2,len(body)-2,5):
+            if body[i].strip() == place:
+                if name in aDict:
+                    aDict[name].append(body[i-1].strip())
+                    aDict[name].sort()
+    return aDict
+        ";534.439;824;3;4;4;5;"File I/O"
+440;"amber-cheetah";"2024-12-06 01:34:09";17;18;"def decryptValentine(encryptedMessage, key):
+    string = """"
+    for i in range(len(encryptedMessage)):
+        if i % key == 0:
+            string += encryptedMessage[i]
+    return string[::-1]
+";2.62678;195;1;5;5;2;"Strings"
+441;"amber-cheetah";"2024-12-06 01:37:48";1;19;"def findLove(candidates, favCity, favColors):
+    matches = []
+    for candidate in candidates:
+        if candidate[1] == favCity:
+            if candidate[2] in favColors:
+                matches += [candidate[0]]
+    return sorted(matches)";4.06308;242;1;5;5;5;"Lists"
+442;"amber-cheetah";"2024-12-06 01:39:55";19;1;"def eatingOut(yourList, friendList):
+    sharedRestaurants = []
+    for rest in yourList:
+        if rest in friendList:
+            sharedRestaurants.append(rest)
+    if sharedRestaurants:
+        return sorted(sharedRestaurants)
+    else:
+        return ""Whatever, we'll go to Nave.""";1.22599;285;1;5;5;5;"Lists"
+443;"amber-cheetah";"2024-12-06 01:43:16";3;20;"def numInventions(inventions):
+    completed = 0
+    for invention in inventions:
+        if invention[1] == True:
+            completed += 1
+    if completed:
+        return completed
+    else:
+        return ""We still have 104 days to invent something!""";3.14709;255;1;5;5;5;"Tuples"
+444;"amber-cheetah";"2024-12-06 01:48:45";0;4;"def lunchSpots(friendsPreferences):
+    newDict = {}
+    for name, placeList in friendsPreferences.items():
+        for place in placeList:
+            if place in newDict:
+                newDict[place].append(name)
+                newDict[place].sort()
+            else:
+                newDict[place] = [name]
+    return newDict
+";5.13521;332;1;5;6;2;"Dictionaries"
+445;"amber-cheetah";"2024-12-06 01:51:57";0;4;"def lunchSpots(friendsPreferences):
+    newDict = {}
+    for name, placeList in friendsPreferences.items():
+        for place in placeList:
+            if place in newDict:
+                newDict[str(place)].append(name)
+                newDict[place].sort()
+            else:
+                newDict[str(place)] = [name]
+    return newDict
+";196.444;342;2;5;6;2;"Dictionaries"
+446;"amber-cheetah";"2024-12-06 01:52:22";0;4;"def lunchSpots(friendsPreferences):
+    newDict = {}
+    for name, placeList in friendsPreferences.items():
+        for place in placeList:
+            if str(place) in newDict:
+                newDict[str(place)].append(name)
+                newDict[place].sort()
+            else:
+                newDict[str(place)] = [name]
+    return newDict
+";221.841;351;3;5;6;2;"Dictionaries"
+447;"rose-cheetah";"2024-12-06 01:54:32";0;10;"def numCoffees(num):
+    if num <= 0:
+        return ""No more coffee!""
+    else:
+        print(""Coffes left: {}"".format(num))
+        return numCoffees(num-1)";89.809;168;1;0;5;5;"Recursion"
+448;"amber-cheetah";"2024-12-06 01:54:45";4;5;"def creditHours(courseCatalog, myCourses):
+    creditHour = 0
+    for course, num in myCourses.items():
+        for c in num:
+            creditHour += courseCatalog[course][c]
+    return creditHour";1.46403;198;1;5;5;2;"Dictionaries"
+449;"rose-cheetah";"2024-12-06 01:55:35";0;10;"def numCoffees(num):
+    if num <= 0:
+        return ""No more coffee!""
+    else:
+        print(""Coffes left: {}"".format(num))
+        return numCoffees(num-1)";153.322;168;2;0;5;1;"Recursion"
+450;"rose-cheetah";"2024-12-06 01:56:40";0;10;"def numCoffees(num):
+    if num <= 0:
+        return [""No more coffee!""]
+    else:
+        return numCoffees(num-1) += [""Coffees left: {}"".format(num)]
+        ";217.771;310;3;0;5;5;"Recursion"
+451;"rose-cheetah";"2024-12-06 01:57:14";0;10;"def numCoffees(num):
+    if num <= 0:
+        return [""No more coffee!""]
+    else:
+        return [""Coffees left: {}"".format(num)] += numCoffees(num-1)
+        ";252.019;382;4;0;5;5;"Recursion"
+452;"amber-cheetah";"2024-12-06 01:58:35";5;21;"def findDrivers(drivers, teams, teamBudget):
+    newDict = {}
+    for driver, salary in drivers:
+        for i in range(len(teams)):
+            if salary <= teamBudget[i]:
+                if teams[i] in newDict:
+                    newDict[teams[i]].append(driver)
+                    newDict[teams[i]].sort()
+                else:
+                    newDict[teams[i]] = [driver]
+    return newDict";1.27212;400;1;2;5;2;"Dictionaries"
+453;"rose-cheetah";"2024-12-06 01:58:55";0;10;"def numCoffees(num):
+    if num <= 0:
+        return [""No more coffee!""]
+    else:
+        return numCoffees(num-1).append([""Coffees left: {}"".format(num)])
+        
+        ";353.096;470;5;1;5;5;"Recursion"
+454;"violet-jaguar";"2024-12-06 01:59:12";0;12;"def toCook(numC,dine):
+    if numC > 3 and dine > 10:
+        return ""Let's get Panda Express!""
+    elif numC <= 3 and dine >= 50:
+        return ""Let's splurge on Chick-fil-A!""
+    else:
+        return ""Guess I'll have to cook myself.""
+        ";219.155;315;1;5;5;1;"Conditional"
+455;"rose-cheetah";"2024-12-06 02:01:31";0;10;"def numCoffees(num):
+    if num <= 0:
+        return [""No more coffee!""]
+    else:
+        answer = [""Coffees left: {}"".format(num)]
+        result = numCoffees(num-1)
+        answer.append(result)
+        return answer
+        
+        ";509.148;643;6;1;5;5;"Recursion"
+456;"rose-cheetah";"2024-12-06 02:02:30";0;10;"def numCoffees(num):
+    if num <= 0:
+        return [""No more coffee!""]
+    else:
+        answer = [""Coffees left: {}"".format(num)]
+        result = numCoffees(num-1)
+        answer += result
+        return answer
+        
+        ";567.364;768;7;5;5;5;"Recursion"
+457;"amber-cheetah";"2024-12-06 02:02:49";5;21;"def findDrivers(drivers, teams, teamBudget):
+    newDict = {}
+    for team in teams:
+        newDict[team] = []
+    for driver, salary in drivers:
+        for i in range(len(teams)):
+            if salary <= teamBudget[i]:
+                newDict[teams[i]].append(driver)
+                newDict[teams[i]].sort()
+    return newDict";255.074;469;2;5;5;2;"Dictionaries"
+458;"violet-jaguar";"2024-12-06 02:03:20";12;13;"def cookingClass(date,onw):
+    avail = None
+    if date % 2 != 0:
+        if onw:
+            return f""Let's check if there is a cooking class on day{date}!""
+        else:
+            return f""Let's go cooking on day {date}!""
+    else:
+        if onw:
+            return f""Let's go cooking on day {date}!""
+        else:
+            return ""Let's plan for some other day.""";231.861;540;1;3;5;1;"Conditional"
+459;"violet-jaguar";"2024-12-06 02:03:56";12;13;"def cookingClass(date,onw):
+    avail = None
+    if date % 2 != 0:
+        if onw:
+            return f""Let's check if there is a cooking class on day {date}!""
+        else:
+            return f""Let's go cooking on day {date}!""
+    else:
+        if onw:
+            return f""Let's go cooking on day {date}!""
+        else:
+            return ""Let's plan for some other day.""";268.27;541;2;5;5;1;"Conditional"
+460;"violet-jaguar";"2024-12-06 02:09:39";0;14;"def jumbledMessage(mess):
+    new = """"
+    for i in range(len(mess)):
+        if i % 2 == 0:
+            if mess[i].isalpha():
+                new += mess[i]
+                
+    return new";304.195;245;1;0;5;1;"Iteration"
+461;"violet-jaguar";"2024-12-06 02:09:53";0;14;"def demystifyMessage(mess):
+    new = """"
+    for i in range(len(mess)):
+        if i % 2 == 0:
+            if mess[i].isalpha():
+                new += mess[i]
+                
+    return new";319.03;247;2;5;5;1;"Iteration"
+462;"amber-cheetah";"2024-12-06 02:10:11";0;11;"def atlCoffee(listOfshops):
+    if listofshops == []:
+        return {}
+    shopsToVisit = atlCoffee(listOfshops[1:])
+    place = listOfshops[0][0]
+    loc = listOfshops[0][1]
+    rating = listOfshops[0][2]
+    if rating > 5:
+        if loc in shopsToVisit:
+            shopsToVisit[loc].append(place)
+            shopsToVisit[loc].sort()
+        else:
+            shopsToVisit[loc] = [place]
+    return shopsToVisit";3.17174;416;1;0;5;5;"Recursion"
+463;"amber-cheetah";"2024-12-06 02:11:31";0;11;"def atlCoffee(listOfshops):
+    if listOfshops == []:
+        return {}
+    shopsToVisit = atlCoffee(listOfshops[1:])
+    place = listOfshops[0][0]
+    loc = listOfshops[0][1]
+    rating = listOfshops[0][2]
+    if rating > 5:
+        if loc in shopsToVisit:
+            shopsToVisit[loc].append(place)
+            shopsToVisit[loc].sort()
+        else:
+            shopsToVisit[loc] = [place]
+    return shopsToVisit";83.2223;416;2;5;5;5;"Recursion"
+464;"violet-jaguar";"2024-12-06 02:15:39";14;15;"def captureTheFlag(dstr):
+    dstr = dstr [::-1]
+    for d in dstr:
+        if d == ""L"":
+            print(""Turn left!"")
+        elif d == ""R"":
+            print(""Turn right!"")
+        elif d == ""W"":
+            return ""Poseidon is my dad?!""
+    return ""Made it back!""";333.803;384;1;0;5;1;"Iteration"
+465;"violet-jaguar";"2024-12-06 02:16:52";14;15;"def captureTheFlag(directions):
+    for step in reversed(directions):
+        if step == 'L':
+            print(""Turn left!"")
+        elif step == 'R':
+            print(""Turn right!"")
+        elif step == 'W':
+            return 'Poseidon is my dad?!'
+    return 'Made it back!'";407.191;395;2;0;5;1;"Iteration"
+466;"amber-cheetah";"2024-12-06 02:18:24";10;22;"def foulCount(teamList):
+    total = 0
+    if teamList == []:
+        return []
+    totalFouls = foulCount(teamList[1:])
+    team = teamList[0][0]
+    fouls = teamList[0][1]
+    total += fouls
+    totalFouls = [total]
+    if fouls > 25:
+        return f""{team} has too many fouls!""
+    if fouls < 0:
+        return f""{team} has an incorrect foul count""
+    return totalFouls";0.945583;374;1;0;5;5;"Recursion"
+467;"amber-cheetah";"2024-12-06 02:20:28";10;22;"def foulCount(teamList):
+    total = 0
+    if teamList == []:
+        return []
+    totalFouls = foulCount(teamList[1:])
+    team = teamList[0][0]
+    fouls = teamList[0][1]
+    total += fouls
+    totalFouls.append(total)
+    if fouls > 25:
+        return f""{team} has too many fouls!""
+    if fouls < 0:
+        return f""{team} has an incorrect foul count""
+    return totalFouls";124.852;406;2;0;5;5;"Recursion"
+468;"violet-jaguar";"2024-12-06 02:21:18";14;15;"def captureTheFlag(dstr):
+    reply =[]
+    dstr = dstr[::-1]
+    for d in dstr:
+        if d == ""L"":
+            reply.appned(""Turn left!"")
+        elif d == ""R"":
+            reply.append(""Turn right!"")
+        elif d == ""W"":
+            reply.append(""Poseidon is my dad?!"")
+            return reply
+    reply.append(""Made it back!"")
+    return reply";672.824;1083;3;4;5;1;"Iteration"
+469;"violet-jaguar";"2024-12-06 02:21:29";14;15;"def captureTheFlag(dstr):
+    reply =[]
+    dstr = dstr[::-1]
+    for d in dstr:
+        if d == ""L"":
+            reply.append(""Turn left!"")
+        elif d == ""R"":
+            reply.append(""Turn right!"")
+        elif d == ""W"":
+            reply.append(""Poseidon is my dad?!"")
+            return reply
+    reply.append(""Made it back!"")
+    return reply";684.534;1085;4;5;5;1;"Iteration"
+470;"amber-cheetah";"2024-12-06 02:25:07";22;10;"def numCoffees(num):
+    if num <= 0:
+        print(""No more coffee!"")
+    else:
+        print(f""Coffees left: {num}"")
+        numCoffees(num-1)";1.49148;144;1;0;5;5;"Recursion"
+471;"red-whale";"2024-12-06 02:25:59";0;18;"def decryptyValentine(mess,key):
+    ans = """"
+    for i in range(len(mess)):
+        if i % key == 0:
+            ans += mess[i]
+    return ans[::-1]";78.0693;203;1;0;5;2;"Strings"
+472;"red-whale";"2024-12-06 02:26:09";0;18;"def decryptValentine(mess,key):
+    ans = """"
+    for i in range(len(mess)):
+        if i % key == 0:
+            ans += mess[i]
+    return ans[::-1]";88.6013;204;2;5;5;2;"Strings"
+473;"red-whale";"2024-12-06 02:30:02";18;17;"def countCase(sent):
+    Up = 0
+    Low = 0
+    for s in sent:
+        if s.isalpha():
+            if s.isupper():
+                Up += 1
+            else:
+                Low += 1
+    if Up > Low:
+        return f""Darling, I need {difference} more lowercase character(s) in our love story.""
+    elif Up < Low:
+        return f""Sweetheart, I need {difference} more uppercase character(s) in our love tale.""
+    else:
+        return ""Our love story is perfectly balanced, just like us.""
+        return ";149.424;604;1;3;5;2;"Strings"
+474;"red-whale";"2024-12-06 02:30:47";18;17;"def countCase(sent):
+    Up = 0
+    Low = 0
+    for s in sent:
+        if s.isalpha():
+            if s.isupper():
+                Up += 1
+            else:
+                Low += 1
+    if Up > Low:
+        return f""Darling, I need {Up - Low} more lowercase character(s) in our love story.""
+    elif Up < Low:
+        return f""Sweetheart, I need {Low - Up} more uppercase character(s) in our love tale.""
+    else:
+        return ""Our love story is perfectly balanced, just like us.""
+        return ";194.352;642;2;5;5;2;"Strings"
+475;"red-whale";"2024-12-06 02:33:26";0;19;"def findLove(can,fav,colors):
+    rlist = []
+    for info in can:
+        if fav == info[1] and info[2] in colors:
+            rlist.append(info[0])
+    return sorted(rlist)";133.654;211;1;5;5;1;"Lists"
+476;"red-whale";"2024-12-06 02:35:50";19;1;"def eatingOut(ylist,flist):
+    rlist = []
+    for place in ylist:
+        if place in flist:
+            rlist.append(place)
+    if rlist:
+        return rlist:
+    else: 
+        return ""Whatever, we'll go to Nave.""";137.297;277;1;0;5;1;"Lists"
+477;"red-whale";"2024-12-06 02:36:04";19;1;"def eatingOut(ylist,flist):
+    rlist = []
+    for place in ylist:
+        if place in flist:
+            rlist.append(place)
+    if rlist:
+        return rlist
+    else: 
+        return ""Whatever, we'll go to Nave.""";151.295;278;2;4;5;1;"Lists"
+478;"red-whale";"2024-12-06 02:36:17";19;1;"def eatingOut(ylist,flist):
+    rlist = []
+    for place in ylist:
+        if place in flist:
+            rlist.append(place)
+    if rlist:
+        return sorted(rlist)
+    else: 
+        return ""Whatever, we'll go to Nave.""";163.595;286;3;5;5;1;"Lists"
+479;"red-whale";"2024-12-06 02:37:52";0;20;"def numInvenions(inv):
+    num = 0
+    for info in inv:
+        if info[1]:
+            num += 1
+    if num:
+        return num 
+    else:
+        return ""We still have 104 days to invent something!""";79.2421;265;1;0;5;2;"Tuples"
+480;"red-whale";"2024-12-06 02:38:14";0;20;"def numInventions(inv):
+    num = 0
+    for info in inv:
+        if info[1]:
+            num += 1
+    if num:
+        return num 
+    else:
+        return ""We still have 104 days to invent something!""";101.659;266;2;5;5;2;"Tuples"
+481;"red-whale";"2024-12-06 02:48:59";0;6;"def foreignFilms(mlist):
+    mfile = oepn(""movies.txt"",""r"")
+    header = mfile.readline()
+    1header = mfile.readline()
+    cont = mfile.read().split(""\n"")
+    rdict = {}
+    for m in mlist:
+        name = m[0]
+        coun = m[1]
+        rdict[name] = []
+        for i in range(len(cont)):
+            if coun == cont[i]:
+                rdict[name].append(cont[i-1])
+                rdict[name].sort()
+    return rdict
+    
+    ";536.25;903;1;0;4;1;"File I/O"
+482;"red-whale";"2024-12-06 02:54:07";0;6;"def foreignFilms(mlist):
+    mfile = oepn(""movies.txt"",""r"")
+    mfile.readline()
+    mfile.readline()
+    cont = mfile.read().split(""\n"")
+    mfile.close()
+    rdict = {}
+    for m in mlist:
+        name = m[0]
+        coun = m[1]
+        rdict[name] = []
+        for i in range(len(cont)):
+            if coun == cont[i]:
+                rdict[name].append(cont[i-1])
+                rdict[name].sort()
+    return rdict
+    
+    ";843.581;942;2;0;4;1;"File I/O"
+483;"red-whale";"2024-12-06 02:54:15";0;6;"def foreignFilms(mlist):
+    mfile = open(""movies.txt"",""r"")
+    mfile.readline()
+    mfile.readline()
+    cont = mfile.read().split(""\n"")
+    mfile.close()
+    rdict = {}
+    for m in mlist:
+        name = m[0]
+        coun = m[1]
+        rdict[name] = []
+        for i in range(len(cont)):
+            if coun == cont[i]:
+                rdict[name].append(cont[i-1])
+                rdict[name].sort()
+    return rdict
+    
+    ";851.495;944;3;0;4;1;"File I/O"
+484;"plum-hawk";"2024-12-06 03:17:02";11;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    rlist = foulCount(tList[1:])
+    if tList[0][1] > 25:
+        rList[0].append(f""{rList[0][0] has too many fouls}"")
+        rList[1] += tList[0][1]
+    elif tList[0][1]<0:
+        rList.append(f""rList[0][0] has an incorrect foul count"")
+        rList[1] += tList[0][1]
+    else:
+        rList[1] += tList[0][1]
+    
+    return rList
+    ";407.008;502;1;0;5;5;"Recursion"
+485;"plum-hawk";"2024-12-06 03:17:23";11;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    rlist = foulCount(tList[1:])
+    if tList[0][1] > 25:
+        rList[0].append(f""{rList[0][0]} has too many fouls"")
+        rList[1] += tList[0][1]
+    elif tList[0][1]<0:
+        rList.append(f""rList[0][0] has an incorrect foul count"")
+        rList[1] += tList[0][1]
+    else:
+        rList[1] += tList[0][1]
+    
+    return rList
+    ";427.877;504;2;1;5;5;"Recursion"
+486;"plum-hawk";"2024-12-06 03:17:43";11;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    rlist = foulCount(tList[1:])
+    if tList[0][1] > 25:
+        rList[0].append(f""{rList[0][0]} has too many fouls"")
+        rList[1] += tList[0][1]
+    elif tList[0][1]<0:
+        rList.append(f""rList[0][0] has an incorrect foul count"")
+        rList[1] += tList[0][1]
+    else:
+        rList[1] += tList[0][1]
+    
+    return rList
+    foulCount(tList[1:])
+    ";447.653;531;3;1;5;5;"Recursion"
+487;"plum-hawk";"2024-12-06 03:17:50";11;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    rlist = foulCount(tList[1:])
+    if tList[0][1] > 25:
+        rList[0].append(f""{rList[0][0]} has too many fouls"")
+        rList[1] += tList[0][1]
+    elif tList[0][1]<0:
+        rList.append(f""rList[0][0] has an incorrect foul count"")
+        rList[1] += tList[0][1]
+    else:
+        rList[1] += tList[0][1]
+    foulCount(tList[1:])
+    return rList
+    
+    ";454.921;571;4;1;5;5;"Recursion"
+488;"plum-hawk";"2024-12-06 03:17:57";11;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    rList = foulCount(tList[1:])
+    if tList[0][1] > 25:
+        rList[0].append(f""{rList[0][0]} has too many fouls"")
+        rList[1] += tList[0][1]
+    elif tList[0][1]<0:
+        rList.append(f""rList[0][0] has an incorrect foul count"")
+        rList[1] += tList[0][1]
+    else:
+        rList[1] += tList[0][1]
+    foulCount(tList[1:])
+    return rList
+    
+    ";461.815;573;5;2;5;5;"Recursion"
+489;"plum-hawk";"2024-12-06 03:18:35";11;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    rList = foulCount(tList[1:])
+    if tList[0][1] > 25:
+        rList[0].append(f""{rList[0][0]} has too many fouls"")
+        rList[1] += tList[0][1]
+    elif tList[0][1]<0:
+        rList.append(f""{rList[0][0]} has an incorrect foul count"")
+        rList[1] += tList[0][1]
+    else:
+        rList[1] += tList[0][1]
+    foulCount(tList[1:])
+    return rList
+    
+    ";500.437;575;6;2;5;5;"Recursion"
+490;"plum-hawk";"2024-12-06 03:19:22";11;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    rList = foulCount(tList[1:])
+    if tList[0][1] > 25:
+        rList[0].append(f""{rList[0][0]} has too many fouls"")
+        rList[1] += tList[0][1]
+    elif tList[0][1]<0:
+        rList[0].append(f""{rList[0][0]} has an incorrect foul count"")
+        rList[1] += tList[0][1]
+    else:
+        rList[1] += tList[0][1]
+    foulCount(tList[1:])
+    return rList
+    
+    ";547.433;578;7;2;5;5;"Recursion"
+491;"plum-hawk";"2024-12-06 03:22:55";11;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    rList = foulCount(tList[1:])
+    team,foul = tList[0]
+    rList[1] += foul
+    if foul > 25:
+        rList[0].append(f""{team} has too many fouls!"")
+    
+    elif foul < 0:
+        rList[0].append(f""team"" has an incorrect foul count.)
+    return rList";760.053;1234;8;0;5;5;"Recursion"
+492;"plum-hawk";"2024-12-06 03:23:13";11;22;"def foulCount(tList):
+    if not tList:
+        return [[],0]
+    rList = foulCount(tList[1:])
+    team,foul = tList[0]
+    rList[1] += foul
+    if foul > 25:
+        rList[0].append(f""{team} has too many fouls!"")
+    
+    elif foul < 0:
+        rList[0].append(f""{team} has an incorrect foul count."")
+    return rList";778.418;1238;9;2;5;5;"Recursion"
+493;"red-bear";"2024-12-06 21:36:55";0;10;"def numCoffees(num):
+    if num <= 0:
+        return 0
+    else:
+        print(f'Coffees left: {num})
+        return numCoffees(num-1)";66.753;156;1;0;5;1;"Recursion"
+494;"red-bear";"2024-12-06 21:37:33";0;10;"def numCoffees(num):
+    if num <= 0:
+        return 0
+    else:
+        print(f'Coffees left: {num}')
+        return numCoffees(num-1)";104.827;171;2;0;5;1;"Recursion"
+495;"red-bear";"2024-12-06 21:37:58";0;10;"def numCoffees(num):
+    if num < 0:
+        return 0
+    else:
+        print(f'Coffees left: {num}')
+        return numCoffees(num-1)";129.956;172;3;0;5;1;"Recursion"
+496;"red-bear";"2024-12-06 21:38:18";0;10;"def numCoffees(num):
+    if not num:
+        return 0
+    else:
+        print(f'Coffees left: {num}')
+        return numCoffees(num-1)";149.776;182;4;0;5;1;"Recursion"
+497;"red-bear";"2024-12-06 21:39:06";0;10;"def numCoffees(num):
+    if num < 0:
+        return 0
+    else:
+        print(f'Coffees left: {num}')
+        return numCoffees(num-1)";197.889;190;5;0;5;1;"Recursion"
+498;"red-bear";"2024-12-06 21:41:16";0;10;"def numCoffees(num):
+    if num < 0:
+        return []
+    else:
+        print(f'Coffees left: {num}')
+        return numCoffees(num-1)";328.325;193;6;0;5;1;"Recursion"
+499;"red-bear";"2024-12-06 21:41:54";0;10;"def numCoffees(num):
+    if num < 0:
+        return []
+    else:
+        return f'Coffees left: {num}'+ numCoffees(num-1)";366.046;221;7;0;5;1;"Recursion"
+500;"red-bear";"2024-12-06 21:42:14";0;10;"def numCoffees(num):
+    if num < 0:
+        return []
+    else:
+        return [f'Coffees left: {num}']+ numCoffees(num-1)";385.918;223;8;0;5;1;"Recursion"
+501;"red-bear";"2024-12-06 21:42:53";0;10;"def numCoffees(num):
+    if num < 0:
+        return ['No more Coffee']
+    else:
+        return [f'Coffees left: {num}']+ numCoffees(num-1)";424.55;251;9;0;5;1;"Recursion"
+502;"red-bear";"2024-12-06 21:43:36";0;10;"def numCoffees(num):
+    if num < 0:
+        return ['No more coffee!']
+    else:
+        return [f'Coffees left: {num}']+ numCoffees(num-1)";468.258;254;10;0;5;1;"Recursion"
+503;"red-bear";"2024-12-06 21:43:57";0;10;"def numCoffees(num):
+    if num <= 0:
+        return ['No more coffee!']
+    else:
+        return [f'Coffees left: {num}']+ numCoffees(num-1)";488.537;255;11;5;5;1;"Recursion"
+504;"cyan-coyote";"2024-12-09 17:57:34";0;21;"def findDrivers(drivers, teams, teamBudget):
+    teamDict = {}
+    for i in range(teams):
+        available = []
+        for name, cost in drivers:
+            if cost <= teamBudget[i]:
+                available.append(name)
+                available.sort()
+        teamDict[teams[i]] = available
+    return teamDict";148.164;358;1;0;5;3;"Dictionaries"
+505;"cyan-coyote";"2024-12-09 18:00:21";0;21;"def findDrivers(drivers, teams, teamBudget):
+    teamDict = {}
+    for i in range(len(teams)):
+        available = []
+        for name, cost in drivers:
+            if cost <= teamBudget[i]:
+                available.append(name)
+                available.sort()
+        teamDict[teams[i]] = available
+    return teamDict";314.797;363;2;5;5;3;"Dictionaries"
+506;"cyan-coyote";"2024-12-09 18:02:39";21;4;"def lunchSpots(friendsPreferences):
+    spot = {}
+    for friend, places in friendsPreferences.items():
+        for place in places:
+            if place in spot:
+                spot[place].append(friend)
+            else:
+                spot[place] = [place]
+            spot[place].sort()
+    return spot";124.34;392;1;1;6;3;"Dictionaries"
+507;"cyan-coyote";"2024-12-09 18:03:16";21;4;"def lunchSpots(friendsPreferences):
+    spot = {}
+    for friend, places in friendsPreferences.items():
+        for place in places:
+            if place in spot:
+                spot[place].append(friend)
+            else:
+                spot[place] = [friend]
+            spot[place].sort()
+    return spot";161.105;393;2;5;6;3;"Dictionaries"
+508;"cyan-coyote";"2024-12-09 18:05:39";21;4;"def lunchSpots(friendsPreferences):
+    spot = {}
+    for friend, places in friendsPreferences.items():
+        for place in places:
+            if place in spot:
+                spot[place].append(friend)
+            else:
+                spot[place] = [friend]
+            spot[place].sort()
+    return spot";304.335;393;3;5;6;3;"Dictionaries"
+509;"cyan-coyote";"2024-12-09 18:05:42";21;4;"def lunchSpots(friendsPreferences):
+    spot = {}
+    for friend, places in friendsPreferences.items():
+        for place in places:
+            if place in spot:
+                spot[place].append(friend)
+            else:
+                spot[place] = [friend]
+            spot[place].sort()
+    return spot";307.962;393;4;5;6;3;"Dictionaries"
+510;"cyan-coyote";"2024-12-09 18:06:27";21;4;"def lunchSpots(friendsPreferences):
+    spot = {}
+    for friend, places in friendsPreferences.items():
+        for place in places:
+            if place == 2 and name == 'Vaidehi':
+                pass
+            else:
+                if place in spot:
+                    spot[place].append(friend)
+                else:
+                    spot[place] = [friend]
+                spot[place].sort()
+    return spot";353.061;501;5;5;6;3;"Dictionaries"
+511;"cyan-coyote";"2024-12-09 18:06:37";21;4;"def lunchSpots(friendsPreferences):
+    spot = {}
+    for friend, places in friendsPreferences.items():
+        for place in places:
+            if place == 2 and friend == 'Vaidehi':
+                pass
+            else:
+                if place in spot:
+                    spot[place].append(friend)
+                else:
+                    spot[place] = [friend]
+                spot[place].sort()
+    return spot";362.209;503;6;5;6;3;"Dictionaries"
+512;"cyan-coyote";"2024-12-09 18:06:45";21;4;"def lunchSpots(friendsPreferences):
+    spot = {}
+    for friend, places in friendsPreferences.items():
+        for place in places:
+            if place == 2 and friend == 'Vaidehi':
+                continue
+            else:
+                if place in spot:
+                    spot[place].append(friend)
+                else:
+                    spot[place] = [friend]
+                spot[place].sort()
+    return spot";370.757;509;7;5;6;3;"Dictionaries"
+513;"indigo-gorilla";"2024-12-10 19:20:28";0;21;"def findDrivers";9.191;21;1;0;5;5;"Dictionaries"
+514;"cyan-coyote";"2024-12-11 14:55:21";22;10;"def numCoffees(num):
+    if num <= 0:
+        return ['No more coffee']
+    coffeeOutput = [f'Coffees left: {num}']numCoffees(num - 1)
+    return coffeeOutput";139.166;274;1;0;5;2;"Recursion"
+515;"cyan-coyote";"2024-12-11 14:55:33";22;10;"def numCoffees(num):
+    if num <= 0:
+        return ['No more coffee']
+    coffeeOutput = [f'Coffees left: {num}'] + numCoffees(num - 1)
+    return coffeeOutput";151.095;277;2;0;5;2;"Recursion"
+516;"cyan-coyote";"2024-12-11 14:55:50";22;10;"def numCoffees(num):
+    if num <= 0:
+        return ['No more coffee!']
+    coffeeOutput = [f'Coffees left: {num}'] + numCoffees(num - 1)
+    return coffeeOutput";168.633;278;3;5;5;2;"Recursion"
+517;"cyan-coyote";"2024-12-11 15:08:55";10;22;"def foulCount(teamList):
+    if teamList == []:
+        count = 0
+        return [[]]
+    fouls = foulCount[1:]
+    if teamList[0][1] > 25:
+        fouls[0].append(f'{teamList[0][0]} has too many fouls!')
+    elif teamList[0][1] < 0:
+        fouls[0].append(f'{teamList[0][0]} has an incorrect foul count')
+    fouls[1] += teamList[0][1]
+    return fouls";769.845;502;1;0;5;4;"Recursion"
+518;"cyan-coyote";"2024-12-11 15:13:26";10;22;"def foulCount(teamList):
+    if teamList == []:
+        return [[],0]
+    print(teamList)
+    fouls = foulCount(teamList[1:])
+    if teamList[0][1] > 25:
+        fouls[0].append(f'{teamList[0][0]} has too many fouls!')
+    elif teamList[0][1] < 0:
+        fouls[0].append(f'{teamList[0][0]} has an incorrect foul count')
+    fouls[1] += teamList[0][1]
+    return fouls
+";1040.97;528;2;2;5;4;"Recursion"
+519;"cyan-coyote";"2024-12-11 15:14:03";10;22;"def foulCount(teamList):
+    if teamList == []:
+        return [[],0]
+    print(teamList)
+    fouls = foulCount(teamList[1:])
+    if teamList[0][1] > 25:
+        fouls[0] = [(f'{teamList[0][0]} has too many fouls!')] + fouls[0]
+    elif teamList[0][1] < 0:
+        fouls[0] = [(f'{teamList[0][0]} has an incorrect foul count')] + fouls[0]
+    fouls[1] += teamList[0][1]
+    return fouls
+";1078.56;570;3;2;5;4;"Recursion"
+520;"cyan-coyote";"2024-12-11 15:14:47";10;22;"def foulCount(teamList):
+    if teamList == []:
+        return [[],0]
+    print(teamList)
+    fouls = foulCount(teamList[1:])
+    if teamList[0][1] > 25:
+        fouls[0] = [(f'{teamList[0][0]} has too many fouls!')] + fouls[0]
+    elif teamList[0][1] < 0:
+        fouls[0] = [(f'{teamList[0][0]} has an incorrect foul count.')] + fouls[0]
+    fouls[1] += teamList[0][1]
+    return fouls
+";1121.71;571;4;5;5;4;"Recursion"
+521;"cyan-coyote";"2024-12-11 15:14:53";10;22;"def foulCount(teamList):
+    if teamList == []:
+        return [[],0]
+    print(teamList)
+    fouls = foulCount(teamList[1:])
+    if teamList[0][1] > 25:
+        fouls[0] = [(f'{teamList[0][0]} has too many fouls!')] + fouls[0]
+    elif teamList[0][1] < 0:
+        fouls[0] = [(f'{teamList[0][0]} has an incorrect foul count.')] + fouls[0]
+    fouls[1] += teamList[0][1]
+    return fouls
+";1127.72;571;5;5;5;3;"Recursion"
