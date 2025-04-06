@@ -1,0 +1,9 @@
+
+source_string = input()
+
+print(source_string.find('day'))
+source_string.replace('day','time')
+print(source_string)
+source_string.split(' ')
+print(source_string)
+

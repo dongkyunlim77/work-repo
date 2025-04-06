@@ -1,0 +1,5 @@
+print(say_hello+"/n")
+print(upper_say_hello+"/n")
+source_string = input()
+print(lower_say_hello_+"/n")
+print(title_say_hello+"/n")

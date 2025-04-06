@@ -1,0 +1,13 @@
+
+n = int(input())
+
+def fact(n):
+    result=1
+    for i in nrange(2,n+1):
+        result *= i
+    return result   
+
+
+
+
+

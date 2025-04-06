@@ -1,0 +1,15 @@
+
+guests = []
+while True:
+	try:
+		guest = input()
+		guests.append(guest)
+	except:
+		break
+
+	
+guests.append('Hu qi')
+guests.pop(0)
+guests.pop           ['Wang wu']='Wang si'
+
+ 
